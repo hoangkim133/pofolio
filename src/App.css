@@ -1,0 +1,132 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.box {
+  background-color:	#f8eee0;
+  box-shadow: 0px 0px 10px rgba(118, 118, 118, 0.25);
+  padding: 1.25rem;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  bottom: 2rem;
+  right: 2rem;
+  overflow: auto;
+  background: url("https://www.shadergradient.co/customize");
+
+}
+
+
+.center-dis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-home{
+  position: absolute;
+  height: 90%;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.position-front{
+  background-color: black;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.main-text-box {
+  font-size: 18px;
+  max-width: 50rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  text-align: center;
+}
+
+.main-font {
+  font-family: 'Roboto Mono', monospace;;
+}
+
+.main-nav span{
+  transition: color .3s ease-in-out, font-weight .3s;
+}
+
+.main-nav span:hover {
+  font-weight: 900;
+  color: black;
+  /* text-decoration: line-through; */
+  cursor: pointer;
+}
+
+.main-nav span.is-active {
+  font-weight: 900;
+  text-decoration: line-through;
+}
+
+.hidden {
+  display:none !important;
+}
+
+.type {
+  color:#0000;
+  background:
+    linear-gradient(-90deg,#000000 5px,#0000 0) 10px 0,
+    linear-gradient(#161717 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation: 
+   b .7s infinite steps(1),   
+   t calc(var(--n)*.3s) steps(var(--n)) forwards;
+}
+
+@keyframes t{
+  from {background-size:0 200%}
+}
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
+}
