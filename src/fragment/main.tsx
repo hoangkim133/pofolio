@@ -4,13 +4,17 @@ import Home from "./home";
 import Info from "./Info";
 import Project from "./projects";
 import Contact from "./contact";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 function MainSection(route: any) {
-  console.log(route.route);
-  const [page, setPage] = useState('home');
-  const [pageContainer, setPageContainer] = useState('home_container');
+  const [page, setPage] = useState(route.route);
+  const [pageContainer, setPageContainer] = useState(route.route + '_container');
+
+  useEffect(() => {
+    document.getElementById(page)?.classList.add('is-active');
+    document.getElementById(pageContainer)?.classList.remove('hidden');
+  }, []);
 
   const changePage = (event: React.MouseEvent<HTMLElement>) => {
     document.getElementById(page)?.classList.remove('is-active');
@@ -21,6 +25,12 @@ function MainSection(route: any) {
 
     elemContainer?.classList.remove('hidden');
     elemSelect.classList.add("is-active");
+
+    if (elemSelect.id == 'home'){
+      window.history.replaceState(null, "", "/");
+    } else {
+      window.history.replaceState(null, "", elemSelect.id);
+    }
 
     setPage(elemSelect.id);
     setPageContainer(elemSelect.id + '_container');
@@ -33,7 +43,7 @@ function MainSection(route: any) {
           <h3><b>KIM HOANG</b> portfolio.</h3>
           <div style={{borderBottom: 'solid #bb5f27', marginBottom: '0.5rem'}}></div>
           <div className="main-nav" style={{fontSize: '13px'}}>
-            <span id='home' onClick={changePage} className="is-active">Home</span> |&nbsp;
+            <span id='home' onClick={changePage}>Home</span> |&nbsp;
             <span id='info' onClick={changePage}>Info</span> |&nbsp;
             <span id='projects' onClick={changePage}>Projetcs</span> |&nbsp;
             <span id='contact' onClick={changePage}>Contact</span>
@@ -44,20 +54,19 @@ function MainSection(route: any) {
         </Col>
       </Row>
       <Row className="flex-grow-1">
-        <div id="home_container" className="center-dis">
+        <div id="home_container" className="center-dis hidden">
           <Home/>
         </div>
-        <div id="info_container" className="hidden">
+        <div id="info_container" className="center-dis hidden">
           <Info/>
         </div>
-        <div id="projects_container" className="hidden">
+        <div id="projects_container" className="center-dis hidden">
           <Project/>
         </div>
-        <div id="contact_container" className="hidden">
+        <div id="contact_container" className="center-dis hidden">
           <Contact/>
         </div>
       </Row>
-      
     </div>
   );
 }
