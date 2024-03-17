@@ -1,6 +1,7 @@
 import './App.css'
 import React, {useState} from 'react';
 import Routers from './fragment/route';
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     !loading && (
       <React.Fragment>
         <Routers/>   
+        <Analytics/>
       </React.Fragment>
     )
   )
