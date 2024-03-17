@@ -23,13 +23,26 @@ function MainSection(route: any) {
     var elemSelect = event.currentTarget;
     var elemContainer = document.getElementById(elemSelect.id + '_container');
 
+
+    var cubelist = document.getElementsByClassName("cube");
+
     elemContainer?.classList.remove('hidden');
     elemSelect.classList.add("is-active");
 
     if (elemSelect.id == 'home'){
       window.history.replaceState(null, "", "/");
+      if (cubelist){
+        for (let cube of cubelist){
+          cube.classList.remove("paused");
+        }
+      }
     } else {
       window.history.replaceState(null, "", elemSelect.id);
+      if (cubelist){
+        for (let cube of cubelist){
+          cube.classList.add("paused");
+        }
+      }
     }
 
     setPage(elemSelect.id);
@@ -57,7 +70,7 @@ function MainSection(route: any) {
         <div id="home_container" className="center-dis hidden">
           <Home/>
         </div>
-        <div id="info_container" className="center-dis hidden">
+        <div id="info_container" className="hidden">
           <Info/>
         </div>
         <div id="projects_container" className="center-dis hidden">

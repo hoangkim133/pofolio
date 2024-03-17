@@ -49,10 +49,70 @@
   bottom: 2rem;
   right: 2rem;
   overflow: auto;
-  background: url("https://www.shadergradient.co/customize");
-
+  background: transparent;
+  overflow: hidden;
 }
 
+
+.img-info{
+  position: absolute; 
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25vw;
+  background-image: url("/public/avatar2.png");
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+  border-top-left-radius: 50px;
+}
+
+.img-info-child {
+  position: absolute;
+  right: 13vw;
+  top: 55%;
+  height: 35vh;
+  width: 28vw;
+  background-color: #f8eee082;
+  border: double #bb5f27 10px;
+}
+
+.main-color{
+  background-color:	#bb5f27;
+  border-color: #bb5f27;
+}
+
+.site {
+  background-color: transparent;
+  color:#bb5f27;
+  border-style:dashed;
+  border-color: #bb5f27;
+  margin-left: 0.5rem;
+}
+
+.resume{
+  margin-right: 0.5rem;
+}
+
+.resume:hover{
+  background-color: #bb5f27;
+  border: solid #bb5f27; 
+}
+
+.offset {
+  box-shadow: 0.25em 0.25em 0 0 var(--color), inset 0.25em 0.25em 0 0 var(--color);
+}
+.offset:hover {
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.offset {
+  background-color: transparent;
+  color: black;
+  border: none;
+  --color: #c29a81;
+  --hover: #bb5f27;
+}
 
 .center-dis {
   display: flex;
@@ -129,4 +189,53 @@
 }
 @keyframes b{
   50% {background-position:0 -100%,0 0}
+}
+
+.stage_inner__centerbox{
+  transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+  max-width: 29vw;
+  font-size: 2vh;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  bottom: 40%;
+}
+
+.stage_inner__centerbox2 {
+  transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+  font-size: 1.3vh;
+  max-width: 15vw;
+  position: absolute;
+  bottom: 7%;
+  left: 3%;
+}
+
+.stage_inner__sidebox {
+  transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+  opacity: 0;
+  font-size: 7vw;
+  font-style: italic;
+  font-weight: 900;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  font-weight: 800;
+  line-height: 1em;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.stage_inner__sidebox2 {
+  transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+  position: absolute;
+  top: 15%;
+  right: 7%;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1em;
+  font-family:'Times New Roman', Times, serif;
+  color:#93694f;
+  opacity: 1;
+  font-size: 7vw;
+  text-transform: capitalize;
 }

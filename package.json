@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-preloaders": "^3.0.3",
     "react-router-dom": "^6.21.2",
+    "react-typed": "^2.0.12",
     "three": "^0.162.0"
   },
   "devDependencies": {
