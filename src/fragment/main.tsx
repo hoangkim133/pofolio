@@ -1,10 +1,10 @@
-import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import Home from "./home";
 import Info from "./Info";
 import Project from "./projects";
 import Contact from "./contact";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 
 function MainSection(route: any) {
@@ -51,20 +51,43 @@ function MainSection(route: any) {
 
   return (
     <div className='box box-conner full-height d-flex flex-column'>
-      <Row className="main-font">
-        <Col>
+      <Row className="main-font navbar-fix">
+        <motion.div
+        initial={{x: '-100vw'}}
+        animate={{x: 0}}
+        transition={{duration: 0.2, type: 'spring', stiffness: 70}}
+        className="col"
+        
+        >
           <h3><b>KIM HOANG</b> portfolio.</h3>
           <div style={{borderBottom: 'solid #bb5f27', marginBottom: '0.5rem'}}></div>
           <div className="main-nav" style={{fontSize: '13px'}}>
-            <span id='home' onClick={changePage}>Home</span> |&nbsp;
-            <span id='info' onClick={changePage}>Info</span> |&nbsp;
-            <span id='projects' onClick={changePage}>Projetcs</span> |&nbsp;
-            <span id='contact' onClick={changePage}>Contact</span>
+            <motion.span 
+            whileHover={{scale: 1.5, originX:0}}
+            transition={{type: 'spring', stiffness: 200}}
+            id='home' onClick={changePage}>Home</motion.span> |&nbsp;
+            <motion.span 
+            whileHover={{scale: 1.2, originX:0}}
+            transition={{type: 'spring', stiffness: 200}}
+            id='info' onClick={changePage}>Info</motion.span> |&nbsp;
+            <motion.span 
+            whileHover={{scale: 1.2, originX:0}}
+            transition={{type: 'spring', stiffness: 200}}
+            id='projects' onClick={changePage}>Projetcs</motion.span> |&nbsp;
+            <motion.span 
+            whileHover={{scale: 1.2, originX:0}}
+            transition={{type: 'spring', stiffness: 200}}
+            id='contact' onClick={changePage}>Contact</motion.span>
           </div>
-        </Col>
-        <Col style={{textAlign:'right'}}>
+        </motion.div>
+        <motion.div 
+        initial={{x: '100vw'}}
+        animate={{x: 0}}
+        transition={{duration: 0.2, type: 'spring', stiffness: 70}}
+        className="col"
+        style={{textAlign:'right'}}>
           <span><img src="./logo.png" alt="" style={{height:'2.5rem'}} /></span>
-        </Col>
+        </motion.div>
       </Row>
       <Row className="flex-grow-1">
         <div id="home_container" className="center-dis hidden">
@@ -73,10 +96,10 @@ function MainSection(route: any) {
         <div id="info_container" className="hidden">
           <Info/>
         </div>
-        <div id="projects_container" className="center-dis hidden">
+        <div id="projects_container" className="hidden">
           <Project/>
         </div>
-        <div id="contact_container" className="center-dis hidden">
+        <div id="contact_container" className="hidden">
           <Contact/>
         </div>
       </Row>

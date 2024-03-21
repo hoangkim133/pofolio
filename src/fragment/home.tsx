@@ -1,4 +1,6 @@
 import Button from 'react-bootstrap/Button';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const changeClass = () => {
@@ -24,7 +26,11 @@ function Home() {
 
     return (
         <div className="main-font">
-            <div id='welcome' className='stage_inner__centerbox'>
+            <motion.div 
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{delay: 0.5, duration: 0.2}}
+            id='welcome' className='stage_inner__centerbox'>
                 <p>
                     Hello there! 👋 
                     <br/> 
@@ -35,11 +41,29 @@ function Home() {
                 <Button onClick={changeClass} className='offset' style={{fontSize:"15px"}}>
                     Explore my site
                 </Button>{' '}
-            </div>   
+            </motion.div>   
             <div id='welcome_side' className='stage_inner__sidebox'>
-                <p>INFO</p>
-                <p>PROJECTS</p>
-                <p>CONTACT</p>
+                <Link to="/info" className='text-home-decor'>
+                    <motion.p
+                    initial={{color: '#93694f'}}
+                    whileHover={{color: 'black'}}
+                    >
+                        INFO
+                    </motion.p>
+                </Link>
+                <p>
+                    <Link to="/projects" className='text-home-decor'>
+                        PROJECTS
+                    </Link>
+                </p>
+                <p>
+                    <Link to="/contact" className='text-home-decor'>
+                        CONTACT
+                    </Link>
+                </p>
+            </div>
+            <div id='tree-home'>
+                <img className="img-home-tree" src="./ink.png" alt="" />
             </div>
             {/* <a href="https://drive.google.com/file/d/1831RxdNq-mOqw4nwqBLAKUaniCUrBLAZ/view?usp=sharing" target="_blank"><Button className='resume main-color'>See my resume</Button>{' '}</a> or&nbsp; */}
 
