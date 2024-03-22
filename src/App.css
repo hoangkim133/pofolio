@@ -89,7 +89,7 @@
   right: 0;
   height: 100%;
   width: 25vw;
-  background-image: url("/public/avatar2.png");
+  background-image: url("/avatar2.png");
   background-position: center;
   background-size: cover;
   z-index: -10;
@@ -139,6 +139,7 @@
 }
 
 .offset {
+  margin-top: 1rem;
   box-shadow: 0.25em 0.25em 0 0 var(--color), inset 0.25em 0.25em 0 0 var(--color);
 }
 .offset:hover {
@@ -233,32 +234,41 @@
   50% {background-position:0 -100%,0 0}
 }
 
+.special-hello{
+  font-family: 'Valneck', sans-serif;
+  font-size: 5vh;
+  margin-bottom: 0;
+  color: #514f4e;
+  text-align: center;
+}
+
 .stage_inner__centerbox{
   transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
   max-width: 29vw;
   font-size: 2vh;
-  transform: translateX(-50%);
   position: absolute;
-  text-align: justify;
-  left: 50%;
+  text-align: center;
+  left: 37%;
   bottom: 40%;
 }
 
 .stage_inner__centerbox2 {
   transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
-  font-size: 1.3vh;
-  max-width: 15vw;
+  font-size: 1.6vh;
+  max-width: 18vw;
   position: absolute;
+  text-align: left;
   bottom: 7%;
   left: 3%;
 }
 
 .stage_inner__sidebox {
-  transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+  transition: all 0.6s cubic-bezier(0.5, 0.005, 0.075, 0.985);
   opacity: 0;
   position: absolute;
   top: 18%;
-  right: 3%;
+  right: -100vw;
+  cursor: none;
 }
 
 .text-home-decor {
@@ -274,7 +284,7 @@
   transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
   position: absolute;
   top: 18%;
-  right: 17%;
+  right: -45%;
   font-style: italic;
   font-weight: 800;
   line-height: 1em;
@@ -393,7 +403,7 @@
   padding-top: 5vh;
   padding-left: 6vw;
   font-size: 7vh;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Valneck', sans-serif;
 }
 
 /* .pro-title p{
