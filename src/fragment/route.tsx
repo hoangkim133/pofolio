@@ -1,6 +1,6 @@
 import { Route, Routes} from 'react-router-dom';
 import Home from './home';
-import Info from './Info';
+import Info from './info';
 import Project from './projects';
 import Contact from './contact';
 import { useLocation } from 'react-router-dom';

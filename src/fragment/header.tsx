@@ -21,7 +21,6 @@ function Header() {
     }, []);
 
     const activeNav = (event: React.MouseEvent<HTMLElement>) => {
-        console.log(window.location.href);
         let navChild = document.getElementsByClassName('navbar-child');
         let pathname = event.currentTarget.getAttribute('href');
 
