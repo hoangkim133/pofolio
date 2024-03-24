@@ -3,10 +3,10 @@ import { motion } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 
 const project_name: Array<any> = [
-    {'id':0, 'value':'VICK', 'type': 'Web dev'},
-    {'id':1, 'value':'HDCAP', 'type': 'Web dev'},
-    {'id':2, 'value':'ALADIN', 'type': 'Web dev'},
-    {'id':3, 'value':'MY SITE', 'type': 'Web dev'},
+    {'id':0, 'value':'VICK', 'type': 'Web dev', 'duration': 0.7, 'durationexit': 0.9},
+    {'id':1, 'value':'HDCAP', 'type': 'Web dev', 'duration': 0.9, 'durationexit': 0.7},
+    {'id':2, 'value':'ALADIN', 'type': 'Web dev', 'duration': 1.1, 'durationexit': 0.5},
+    {'id':3, 'value':'MY SITE', 'type': 'Web dev', 'duration': 1.3, 'durationexit': 0.3},
 ]
 
 interface ProjectInfomation {
@@ -108,7 +108,11 @@ function Project() {
                     <Col></Col>
                     <Col className="pro-title">                     
                         {project_name.map((item: any) =>
-                            <div
+                            <motion.div
+                            initial={{y: '100vh'}}
+                            animate={{y: 0}}
+                            transition={{duration: item.duration, type: 'spring', delay: 0.3}}
+                            exit={{y: '100vh', transition: {duration: item.durationexit}}}
                             key={item.id}>
                                 <div className="center-alig">
                                     <motion.p 
@@ -128,12 +132,16 @@ function Project() {
                                 <div data-id={item.value} className="line-pro">
                                     <div data-text-id={item.value + "_text"} className="line-text">Let see</div>
                                 </div>
-                            </div>
+                            </motion.div>
                             
                         )}
                     </Col>
                     <motion.div 
                     id='pro_section_content'
+                    initial={{scale: 0}}
+                    animate={{scale: 1}}
+                    transition={{duration: 0.3}}
+                    exit={{scale: 0, transition: {duration: 0.3}}}
                     className={projectDetail.class}>
                         <div id="pro_section_content_child">
                             <div style={{textAlign: 'center'}}>
