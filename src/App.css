@@ -469,7 +469,7 @@
   width: 50%;
   overflow-x: hidden;
   transition: all 0.3s ease-in-out;
-  background-image: url("./pro-img.gif");
+  background-image: url("/public/pro-img.gif");
   background-size: cover;
   z-index: 12;
 }
@@ -502,20 +502,20 @@
 
 .bg-pro-1 {
   transition: all 0.3s ease-in-out;
-  background-image: url(./slide-vick.png);
+  background-image: url(/public/slide-vick.png);
 }
 
 .bg-pro-2 {
   transition: all 0.3s ease-in-out;
-  background-image: url(./slide-hd.png);
+  background-image: url(/public/slide-hd.png);
 }
 
 .bg-pro-3 {
   transition: all 0.3s ease-in-out;
-  background-image: url(./slide-aladin.png);
+  background-image: url(/public/slide-aladin.png);
 }
 
 .bg-pro-4 {
   transition: all 0.3s ease-in-out;
-  background-image: url(./slide-site.png);
+  background-image: url(/public/slide-site.png);
 }
