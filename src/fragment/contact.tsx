@@ -1,15 +1,28 @@
 import { Row, Col } from "react-bootstrap"
+import { motion } from "framer-motion"
+import { ReactTyped } from "react-typed"
 // import Form from 'react-bootstrap/Form';
 
 
 function Contact() {
+
     return (
-        <>
+        <motion.div
+        exit={{
+            opacity: 0,
+            transition: {duration: 0.5}
+        }}
+        >
             <Row className="main-font" style={{marginTop: '2.5rem'}}>
                 <Col>
                     <div className="text_cont">
                         <p>
-                            The point of using Lorem Ipsum is that it has as opposed to using 'Content here, content here'
+                            <ReactTyped
+                                    strings={["The point of using Lorem Ipsum is that it has as opposed to using 'Content here, content here'"]}
+                                    startDelay={1000}
+                                    typeSpeed={30}
+                                    showCursor={false}
+                            />
                         </p> 
                     </div>
                     
@@ -34,9 +47,13 @@ function Contact() {
                 </Col>
             </Row>
             <div>
-                <img className="img-back" src="./tree.jpg" alt="" />
+                <motion.img 
+                initial={{clipPath: 'circle(0% at 50% 100%)'}}
+                animate={{clipPath: 'circle(100% at 50% 100%)'}}
+                transition={{duration: 1}}
+                className="img-back" src="./tree.jpg" alt="" />
             </div>
-        </>
+        </motion.div>
     )
 }
 

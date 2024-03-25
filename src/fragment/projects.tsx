@@ -138,10 +138,10 @@ function Project() {
                     </Col>
                     <motion.div 
                     id='pro_section_content'
-                    initial={{scale: 0}}
-                    animate={{scale: 1}}
+                    initial={{scale: 0, borderRadius: '400px', borderTopRightRadius: '400px'}}
+                    animate={{scale: 1, borderRadius: 0, borderTopRightRadius: '50px'}}
                     transition={{duration: 0.3}}
-                    exit={{scale: 0, transition: {duration: 0.3}}}
+                    exit={{scale: 0, borderRadius: '400px', borderTopRightRadius: '400px', transition: {duration: 0.3}}}
                     className={projectDetail.class}>
                         <div id="pro_section_content_child">
                             <div style={{textAlign: 'center'}}>

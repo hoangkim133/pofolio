@@ -329,7 +329,6 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  /* transform: scaleX(-1); */
   z-index: -10;
 }
 
@@ -519,3 +518,4 @@
   transition: all 0.3s linear;
   background-image: url(/public/slide-site.png);
 }
+
