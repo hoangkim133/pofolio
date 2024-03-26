@@ -33,8 +33,6 @@ function Contact() {
     const sendEmail = (e: any) => {
         e.preventDefault();
 
-        setSpin("");
-        setSpinStatus("");
         const currentForm = form.current;
         if (currentForm == null) return;
 
@@ -55,6 +53,9 @@ function Contact() {
         }
 
         if (send_condition) {
+            setSpin("");
+            setSpinStatus("");
+            
             emailjs.sendForm('service_a1c2wea', 'template_5q9fsui', currentForm, {
                 publicKey: 'VsZCZsNPSSrCePQFu',
             }).then(
