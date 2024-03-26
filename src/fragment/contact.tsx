@@ -55,7 +55,7 @@ function Contact() {
         if (send_condition) {
             setSpin("");
             setSpinStatus("");
-            
+
             emailjs.sendForm('service_a1c2wea', 'template_5q9fsui', currentForm, {
                 publicKey: 'VsZCZsNPSSrCePQFu',
             }).then(
@@ -102,15 +102,15 @@ function Contact() {
                     transition={{duration: 0.6, delay: 0.8}}
                     className="form-style">
                         <Form ref={form}>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Group className="mb-3">
                                 <Form.Label>Your name</Form.Label>
                                 <Form.Control onChange={changeBorderEmpty} className="form-child" name="user_name" type="text" placeholder="Enter your name" />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Group className="mb-3">
                                 <Form.Label>Your email</Form.Label>
                                 <Form.Control onChange={changeBorderEmpty} className="form-child" name="email" type="email" placeholder="Enter your email" />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Group className="mb-3">
                                 <Form.Label>Your Message</Form.Label>
                                 <Form.Control onChange={changeBorderEmpty} className="form-child" name="message" as="textarea" rows={3} />
                             </Form.Group>
