@@ -83,7 +83,7 @@ function Contact() {
         }}
         >
             <Row className="main-font" style={{marginTop: '2.5rem'}}>
-                <Col>
+                <Col className="mobile-hidden">
                     <div className="text_cont">
                         <p>
                             <ReactTyped
@@ -99,7 +99,7 @@ function Contact() {
                     <motion.div
                     initial={{clipPath: 'inset(0 0 100% 0)'}}
                     animate={{clipPath: 'inset(0 0 0 0)'}}
-                    transition={{duration: 0.6, delay: 0.8}}
+                    transition={{duration: 0.6, delay: 0.4}}
                     className="form-style">
                         <Form ref={form}>
                             <Form.Group className="mb-3">
@@ -116,13 +116,13 @@ function Contact() {
                             </Form.Group>
                         </Form>
                         <Row style={{marginTop: '1.7rem'}}>
-                            <Col className="info-contact-icon">
+                            <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={8} className="info-contact-icon">
                                 <a href="https://www.linkedin.com/in/hoangkim133/" target="_blank"><Icon.Linkedin size={30} color="#faf5e9"/></a>
                                 <a href="https://github.com/hoangkim133" target="_blank"><Icon.Github size={30} color="#faf5e9"/></a>
                                 <a href="mailto:phamkimhoang133@gmail.com" target="_blank"><Icon.Envelope size={30}color="#faf5e9"/></a>
                                 <a href="https://drive.google.com/file/d/1831RxdNq-mOqw4nwqBLAKUaniCUrBLAZ/view" target="_blank"><Icon.PersonCircle size={30} color="#faf5e9"/></a>
                             </Col>
-                            <Col>
+                            <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={4}>
                                 <motion.div 
                                 whileHover={{scale: 1.1}}
                                 className="button-send-mail" onClick={sendEmail}>
@@ -137,8 +137,8 @@ function Contact() {
             <div>
                 <motion.img 
                 initial={{clipPath: 'circle(0% at 50% 100%)'}}
-                animate={{clipPath: 'circle(100% at 50% 100%)'}}
-                transition={{duration: 1}}
+                animate={{clipPath: 'circle(150% at 50% 100%)'}}
+                transition={{duration: 1.8}}
                 className="img-back" src="./tree.jpg" alt="" />
             </div>
             <Modal show={show} onHide={handleClose}>

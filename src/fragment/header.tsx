@@ -1,4 +1,4 @@
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { useEffect } from "react";
@@ -35,16 +35,34 @@ function Header() {
     };
 
     return (
+        <>
         <Row className="main-font navbar-fix">
-          <motion.div
-          initial={{x: '-100vw'}}
-          animate={{x: 0}}
-          transition={{duration: 0.2, type: 'spring', stiffness: 70}}
-          className="col"  
-        >
-            <h3><b>KIM HOANG</b> portfolio.</h3>
-            <div style={{borderBottom: 'solid #bb5f27', marginBottom: '0.5rem'}}></div>
-            <div className="main-nav" style={{fontSize: '13px'}}>
+            <Col>
+                <motion.div
+                        initial={{x: '-100vw'}}
+                        animate={{x: 0}}
+                        transition={{duration: 0.2, type: 'spring', stiffness: 70}}
+                >
+                    <h3><b>KIM HOANG</b> portfolio.</h3>
+                    <div style={{borderBottom: 'solid #bb5f27', marginBottom: '0.5rem'}}></div>
+                </motion.div>
+            </Col>
+            <Col>
+                <motion.div 
+                initial={{x: '100vw'}}
+                animate={{x: 0}}
+                transition={{duration: 0.2, type: 'spring', stiffness: 70}}
+                style={{textAlign:'right'}}>
+                    <span><img src="./logo.png" alt="" style={{height:'2.5rem'}} /></span>
+                </motion.div>
+            </Col>
+        </Row>
+        <Row className="main-font navbar-fix">
+            <motion.div 
+             initial={{x: '-100vw'}}
+             animate={{x: 0}}
+             transition={{duration: 0.2, type: 'spring', stiffness: 70}}
+            className="main-nav" style={{fontSize: '13px'}}>
                 <motion.span> 
                     <Link to="/" className="navbar-child" onClick={activeNav}>
                         Home
@@ -65,17 +83,9 @@ function Header() {
                         Contact
                     </Link>
                 </motion.span>
-            </div>
-          </motion.div>
-          <motion.div 
-          initial={{x: '100vw'}}
-          animate={{x: 0}}
-          transition={{duration: 0.2, type: 'spring', stiffness: 70}}
-          className="col"
-          style={{textAlign:'right'}}>
-            <span><img src="./logo.png" alt="" style={{height:'2.5rem'}} /></span>
-          </motion.div>
-        </Row>
+            </motion.div>
+            </Row>
+        </>
     );
   }
 

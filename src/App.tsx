@@ -17,7 +17,7 @@ function App() {
       preloader.style.zIndex = "-99999";
 
       setLoading(false);
-    }, 2500)
+    }, 2300)
   }
 
   return (

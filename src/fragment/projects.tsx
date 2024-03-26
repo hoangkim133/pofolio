@@ -1,4 +1,4 @@
-import { Col, Row } from "react-bootstrap"
+import { Col } from "react-bootstrap"
 import { motion } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 
@@ -99,64 +99,55 @@ function Project() {
     }
 
     return (
-        <>
-            <div style={{paddingTop: '1rem'}}>
-                {/* <div className="pro-img">
-                    <img src="./pot_tree.png" alt="" />
-                </div> */}
-                <Row ref={wrapperRef}>
-                    <Col></Col>
-                    <Col className="pro-title">                     
-                        {project_name.map((item: any) =>
-                            <motion.div
-                            initial={{y: '100vh'}}
-                            animate={{y: 0}}
-                            transition={{duration: item.duration, type: 'spring', delay: 0.3}}
-                            exit={{y: '100vh', transition: {duration: item.durationexit}}}
-                            key={item.id}>
-                                <div className="center-alig">
-                                    <motion.p 
-                                        whileHover={{scale: 1.2, originX:0, fontWeight: 900}}
-                                        style={{width: 'max-content'}}
-                                        onMouseEnter={handleMouseEnterControls}
-                                        onMouseOut={handleMouseOutControls}
-                                        className="pro-name"
-                                    >
-                                        {item.value}
+        <div ref={wrapperRef} style={{paddingTop: '1rem'}}>
+            <Col sm={{ span: 6, offset: 6 }} md={{ span: 6, offset: 6 }} xl={6} xxl={6} xxs={6} className="pro-title">                     
+                {project_name.map((item: any) =>
+                    <motion.div
+                    initial={{y: '100vh'}}
+                    animate={{y: 0}}
+                    transition={{duration: item.duration, type: 'spring', delay: 0.3}}
+                    exit={{y: '100vh', transition: {duration: item.durationexit}}}
+                    key={item.id}>
+                        <div className="center-alig">
+                            <motion.p 
+                                whileHover={{scale: 1.2, originX:0, fontWeight: 900}}
+                                style={{width: 'max-content'}}
+                                onMouseEnter={handleMouseEnterControls}
+                                onMouseOut={handleMouseOutControls}
+                                className="pro-name"
+                            >
+                                {item.value}
 
-                                    </motion.p>
-                                    <p className="type-pro-text main-font">
-                                        {item.type}
-                                    </p>
-                                </div>
-                                <div data-id={item.value} className="line-pro">
-                                    <div data-text-id={item.value + "_text"} className="line-text">Let see</div>
-                                </div>
-                            </motion.div>
-                            
-                        )}
-                    </Col>
-                    <motion.div 
-                    id='pro_section_content'
-                    initial={{scale: 0, borderRadius: '400px', borderTopRightRadius: '400px'}}
-                    animate={{scale: 1, borderRadius: 0, borderTopRightRadius: '50px'}}
-                    transition={{duration: 0.3}}
-                    exit={{scale: 0, borderRadius: '400px', borderTopRightRadius: '400px', transition: {duration: 0.3}}}
-                    className={projectDetail.class}>
-                        <div id="pro_section_content_child">
-                            <div style={{textAlign: 'center'}}>
-                                {projectDetail.title.length > 0 &&   
-                                    <img className="title-pro-detail" src={projectDetail.title} alt="Project logo" /> 
-                                }
-                            </div>
-                            <p style={{textAlign: 'center'}} ><a target="_blank" style={{color:projectDetail.maincolor, borderTop: "solid" + projectDetail.maincolor, borderBottom: "solid" + projectDetail.maincolor}} className="url main-font" href={projectDetail.url}>{projectDetail.urlcontent}</a></p>
-                            <p style={{color:projectDetail.maincolor}} className="description">{projectDetail.description}</p>
+                            </motion.p>
+                            <p className="type-pro-text main-font">
+                                {item.type}
+                            </p>
+                        </div>
+                        <div data-id={item.value} className="line-pro">
+                            <div data-text-id={item.value + "_text"} className="line-text">Let see</div>
                         </div>
                     </motion.div>
-                </Row>
-                
-            </div>
-        </>
+                    
+                )}
+            </Col>
+            <motion.div 
+            id='pro_section_content'
+            initial={{scale: 0, borderRadius: '400px', borderTopRightRadius: '400px'}}
+            animate={{scale: 1, borderRadius: 0, borderTopRightRadius: '50px'}}
+            transition={{duration: 0.3}}
+            exit={{scale: 0, borderRadius: '400px', borderTopRightRadius: '400px', transition: {duration: 0.3}}}
+            className={projectDetail.class}>
+                <div id="pro_section_content_child">
+                    <div style={{textAlign: 'center'}}>
+                        {projectDetail.title.length > 0 &&   
+                            <img className="title-pro-detail" src={projectDetail.title} alt="Project logo" /> 
+                        }
+                    </div>
+                    <p style={{textAlign: 'center'}} ><motion.a whileHover={{fontStyle: 'normal'}} target="_blank" style={{color:projectDetail.maincolor, borderTop: "solid" + projectDetail.maincolor, borderBottom: "solid" + projectDetail.maincolor}} className="url main-font" href={projectDetail.url}>{projectDetail.urlcontent}</motion.a></p>
+                    <p style={{color:projectDetail.maincolor}} className="description">{projectDetail.description}</p>
+                </div>
+            </motion.div>
+        </div>
     )
 }
 

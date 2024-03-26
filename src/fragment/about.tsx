@@ -46,7 +46,7 @@ function Info() {
             <div className="box-fix box-conner full-height d-flex flex-column main-font scroll-off">
                 <Container fluid style={{paddingLeft: '0'}}>
                     <Row style={{minHeight:'30vh'}}>
-                        <Col sm={12} lg={4} md={4} xl={4} xxl={4} xxs={8}>
+                        <Col sm={12} lg={4} md={4} xl={4} xxl={4}>
                             <motion.div
                              exit={{scaleX:0, originX: 0,
                                 transition: {duration: 0.4}}}
@@ -102,7 +102,7 @@ function Info() {
                             </p>
                             </motion.div>                            
                         </Col>
-                        <Col sm={12} lg={4} md={4} xl={4} xxl={4} xxs={8}>
+                        <Col sm={12} lg={4} md={4} xl={4} xxl={4} >
                             <motion.div>
                                 <motion.h6 
                                 variants={titleVariants}
@@ -169,7 +169,7 @@ function Info() {
                             animate={{scaleX:1,transition: {delay:1.5, duration: 0.4}}}
                             >
                                 <i>
-                                    <Link to="/projects" style={{fontSize: '15px', color: '#6e6d6d'}} onClick={redirectToProjects}>
+                                    <Link to="/projects" className="link-atp" onClick={redirectToProjects}>
                                         <span>&#8640;</span>
                                         <span> See my experience </span>                      
                                     </Link>
@@ -185,7 +185,7 @@ function Info() {
                                     <ReactTyped
                                     strings={["“Nothing haunts us like the things we don't say!”", "“No pain no gain !!!”"]}
                                     startDelay={1500}
-                                    backDelay={4000}
+                                    backDelay={2000}
                                     typeSpeed={50}
                                     smartBackspace={false}
                                     loop
@@ -195,7 +195,7 @@ function Info() {
                                 </i>
                             </motion.h3>
                         </Col>
-                        <Col sm={12} lg={6} md={6} xl={6} xxl={6} xxs={12} xs={12}>
+                        <Col sm={12} lg={6} md={6} xl={6} xxl={6}    xs={12}>
                             <motion.img 
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
