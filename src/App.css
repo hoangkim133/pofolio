@@ -519,3 +519,36 @@
   background-image: url(/public/slide-site.png);
 }
 
+
+.form-style {
+  background: #48777746;
+  padding: 1rem;
+  border-radius: 20px;
+  color: white;
+  max-width: 35vw;
+  margin: auto;
+}
+
+.form-style .form-child {
+  background-color: #faf5e9;
+}
+
+.info-contact-icon a{
+  padding-right: 0.7rem;
+}
+
+.button-send-mail{
+  background-color: #bb5f27; 
+  border: 0px;
+  width: max-content;
+  padding: 0.5rem;
+  float: right;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.empty {
+  border: solid red;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
