@@ -9,7 +9,6 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Spinner from 'react-bootstrap/Spinner';
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 function Contact() {
@@ -132,17 +131,13 @@ function Contact() {
                     </motion.div>
                 </Col>
             </Row>
-            <motion.div
-            initial={{clipPath: 'circle(0% at 50% 100%)'}}
-            animate={{clipPath: 'circle(150% at 50% 100%)'}}
-            transition={{duration: 1.8}}
-            className="img-back"
-            >
-                <LazyLoadImage src="./tree.jpg"
-                    alt="tree background Alt"
-                    className="img-back"
-                />
-            </motion.div>
+            <div>
+                <motion.img 
+                initial={{clipPath: 'circle(0% at 50% 100%)'}}
+                animate={{clipPath: 'circle(150% at 50% 100%)'}}
+                transition={{duration: 1.8}}
+                className="img-back" src="./tree.jpg" alt="" />
+            </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                 </Modal.Header>
