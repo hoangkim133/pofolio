@@ -343,6 +343,7 @@
 
 .text-info-detail{
   font-size: 13px;
+  text-align: justify;
 }
 
 .project-main-section{
@@ -696,3 +697,5 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
+
+

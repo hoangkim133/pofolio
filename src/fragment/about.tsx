@@ -7,8 +7,8 @@ import { ReactTyped } from "react-typed";
 const name = "Name: PHAM KIM HOANG".split(" ");
 const age = "Age: 23".split(" ");
 const from = "From: Vietnam".split(" ");
-const background = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.".split(" ");
-const other = "Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.".split(" ");
+const background = "I graduated from the University of Economics and Law with a Bachelor's degree in Financial Technology. I began my career as a backend developer in the finance sector before expanding my skills to become a full-stack developer. Currently, I work as a software developer, continuously learning and striving to enhance my qualifications in the field of technology.".split(" ");
+const other = "I have a love for learning and constantly seek out new experiences. I always want to make a product myself from start to finish, crafting something with my own hands. In addition, I enjoy indulging in the simple pleasures of life like savoring a good cup of coffee, staying active through sports, and chilling.".split(" ");
 
 
 const titleVariants = {
@@ -183,7 +183,7 @@ function Info() {
                             className="main-color-text main-font"> 
                                 <i>
                                     <ReactTyped
-                                    strings={["“Nothing haunts us like the things we don't say!”", "“No pain no gain !!!”"]}
+                                    strings={["“No pain no gain !!! - Strive to exceed yesterday's self”", "“Nothing haunts us like the things we don't say!”"]}
                                     startDelay={1500}
                                     backDelay={2000}
                                     typeSpeed={50}

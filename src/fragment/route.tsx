@@ -13,7 +13,7 @@ function Routers() {
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.key}>
                 <Route path='/' element={<Home/>}/>
-                <Route path="/info" element={<Info/>} />
+                <Route path="/about" element={<Info/>} />
                 <Route path="/projects" element={<Project/>} />
                 <Route path="/contact" element={<Contact/>} />
             </Routes>

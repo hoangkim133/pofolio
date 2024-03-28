@@ -69,8 +69,8 @@ function Header() {
                     </Link> 
                 </motion.span> |&nbsp;
                 <motion.span>
-                    <Link to="/info" className="navbar-child"  onClick={activeNav}>
-                        Info
+                    <Link to="/about" className="navbar-child"  onClick={activeNav}>
+                        About
                     </Link>
                 </motion.span> |&nbsp;
                 <motion.span>

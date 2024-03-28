@@ -87,7 +87,7 @@ function Contact() {
                     <div className="text_cont">
                         <p>
                             <ReactTyped
-                                    strings={["The point of using Lorem Ipsum is that it has as opposed to using 'Content here, content here'"]}
+                                    strings={["If you're intrigued, don't hesitate to get in touch. Additionally, you can explore more about me by viewing <a href='https://drive.google.com/file/d/1831RxdNq-mOqw4nwqBLAKUaniCUrBLAZ/view' target='_blank'> my CV (Click here) </a>"]}
                                     startDelay={1000}
                                     typeSpeed={30}
                                     showCursor={false}
