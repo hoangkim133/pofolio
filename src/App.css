@@ -3,40 +3,40 @@
   margin: 0 auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.navbar-logo {
+  display: flex;
+  float: right;  
+  align-items: center;
+}
+
+.navbar-fal {
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  float: right;
+  justify-content: space-evenly;
+}
+
+.bg-logo-nav{
+  background-color: white;
+  display: flex;
+  float: right;  
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+
+.bg-logo-nav-child{
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .box {

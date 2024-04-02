@@ -1,12 +1,12 @@
 import { Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
+import FeatureLogo from "../components/feature";
 import { useEffect } from "react";
 
 
 function Header() {
     useEffect(() => {
-        console.log(window.location.pathname);
         let navChild = document.getElementsByClassName('navbar-child');
         let pathname = window.location.pathname;
 
@@ -53,7 +53,7 @@ function Header() {
                 animate={{x: 0}}
                 transition={{duration: 0.2, type: 'spring', stiffness: 70}}
                 style={{textAlign:'right'}}>
-                    <span><img src="./logo.png" alt="" style={{height:'2.5rem'}} /></span>
+                    <span><FeatureLogo/></span>
                 </motion.div>
             </Col>
         </Row>
