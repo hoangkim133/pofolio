@@ -48,10 +48,11 @@ function FeatureLogo() {
 
     useEffect(() => {
         var mode = localStorage.getItem("mode");
-        console.log(mode);
         if (mode){
+            console.log(mode);
             document.body.classList.remove('dark');
         } else {
+            console.log(mode);
             document.body.classList.add('dark');
         }
     }, []);
