@@ -1,7 +1,7 @@
 import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
-
+import { useEffect, useState } from "react";
 
 const variants_x = {
     open: { scale: 1},
@@ -15,7 +15,7 @@ const variants_icon = {
 
 const variants = {
     open: {width: '2.5rem'},
-    closed: {width: '7.5rem', backgroundColor: "rgb(255 255 255)"}
+    closed: {width: '7.5rem', backgroundColor: "var(--color-navbackground)", boxShadow: "rgb(136, 136, 136) 0px 0px 10px 0px"}
 }
 
 const Path = (props: any) => (
@@ -30,6 +30,41 @@ const Path = (props: any) => (
 
 function FeatureLogo() {
     const [isOpen, toggleOpen] = useCycle(false, true);
+    const [volume, toggleVolume] = useCycle(false, true); 
+    const [datenight, toggleDateNight] = useCycle(true, false); 
+
+    const muteVolume = () => {
+        toggleVolume();
+        var music = document.getElementById('music') as HTMLAudioElement;
+
+        if (music){
+            if (volume) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    };
+
+    useEffect(() => {
+        var mode = localStorage.getItem("mode");
+        console.log(mode);
+                // if (mode){
+        //     document.body.classList.remove('dark');
+        // } else {
+        //     document.body.classList.add('dark');
+        // }
+    }, []);
+    console.log("-----", localStorage.getItem("mode"));
+
+    useEffect(() => {
+        if (datenight) {
+            document.body.classList.remove('dark');
+        } else {
+            document.body.classList.add('dark');
+        }
+        localStorage.setItem("mode", "" + datenight);
+    }, [datenight]);
 
     const activeNav = (event: React.MouseEvent<HTMLElement>) => {
         let navChild = document.getElementsByClassName('navbar-child');
@@ -47,6 +82,9 @@ function FeatureLogo() {
 
     return (
         <>
+        <audio id="music" src="./public/canon.mp3" loop>
+
+        </audio>
         <div className="navbar-logo">
             <motion.div
             variants={variants}
@@ -56,18 +94,23 @@ function FeatureLogo() {
                 <motion.div
                 variants={variants_icon}
                 animate={isOpen ? "open" : "closed"}
+                onClick={muteVolume}
                 >
-                    <Icon.MusicNoteBeamed size={22} color="black"/>
+                    <Icon.VolumeUpFill size={22} color="black" className={volume ? "hidden" : ""}/>
+                    <Icon.VolumeMuteFill size={22} color="black" className={!volume ? "hidden" : ""}/>
                 </motion.div>
                 <motion.div
                 variants={variants_icon}
                 animate={isOpen ? "open" : "closed"}
+                onClick={() => toggleDateNight()}
                 >
-                    <Icon.SunFill size={22} color="black"/>
+                    <Icon.SunFill size={22} color="black" className={!datenight ? "hidden" : ""}/>
+                    <Icon.MoonFill size={22} color="black" className={datenight ? "hidden" : ""}/>
                 </motion.div>
                 <motion.div 
                 animate={isOpen ? "open" : "closed"}
                 variants={variants_x}
+                className="navbut-col"
                 onClick={() => toggleOpen()}>
                 <svg 
                 width="23" height="23" viewBox="0 0 23 23">

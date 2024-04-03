@@ -24,7 +24,7 @@ function App() {
     !loading && (
       <React.Fragment>
         <BrowserRouter>
-          <div className='box box-conner full-height d-flex flex-column'>
+          <div className='box box-conner full-height d-flex flex-column scroll-off'>
             <Header/>
             <Row className="flex-grow-1">
                 <Routers/>  

@@ -193,7 +193,7 @@ function Project() {
                         }
                     </div>
                     <p style={{textAlign: 'center', marginTop: '1rem'}} ><motion.a whileHover={{fontStyle: 'normal'}} target="_blank" style={{color:projectDetail.maincolor, borderTop: "solid" + projectDetail.maincolor, borderBottom: "solid" + projectDetail.maincolor }} className="url main-font" href={projectDetail.url}>{projectDetail.urlcontent}</motion.a></p>
-                    <p style={{color:projectDetail.maincolor}} className="description">{parse(projectDetail.description)}</p>
+                    <div style={{color:projectDetail.maincolor}} className="description">{parse(projectDetail.description)}</div>
                 </div>
             </motion.div>
             </Col>

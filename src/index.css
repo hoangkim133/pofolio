@@ -27,6 +27,47 @@ html {
 
 body {
   padding: 2rem;
+  background-color: rgb(77, 77, 77);
+  height: 100%;
+  overflow: hidden;
+  --color-background: transparent;
+  --color-navbarchild: #161717 ;
+  --color-specialhello: #514f4e;
+  --color-primary:#bb5f27;
+  --color-homerdc: #93694f;
+  --color-navbut: #161717;
+  --color-navbackground: rgb(242, 242, 242);
+  --bg-filtercontact: transparent;
+}
+
+body.dark {
+  padding: 2rem;
+  background-color: rgb(45, 50, 80);
+  height: 100%;
+  overflow: hidden;
+  color: rgb(250, 240, 230);
+  --color-background: rgb(53, 47, 68);
+  --color-navbarchild: rgb(250, 240, 230);
+  --color-specialhello: rgb(250, 240, 230);
+  --color-primary:#bb5f27;
+  --color-homerdc: rgb(242, 197, 160);
+  --color-navbut: #cfccca;
+  --color-navbackground: rgb(112, 119, 161);
+  --bg-filtercontact: rgba(45, 50, 80, 0.887);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    padding: 2rem;
+    background-color: rgb(38, 19, 41);
+    height: 100%;
+    overflow: hidden;
+    --color-background: rgb(38, 19, 41);
+  }
+}
+
+body {
+  padding: 2rem;
   background-color: #f8eee0;
   height: 100%;
   overflow: hidden;
@@ -86,7 +127,7 @@ body {
 #loop {
   height: 100px;
   width: 100px;
-  border: #bb5f27 solid 4px;
+  border: var(--color-primary) solid 4px;
   border-radius: 200px;
 }
 
@@ -139,7 +180,7 @@ body {
 
 .shimmer {
   margin-top: 10rem;
-  color: #bb5f27;
+  color: var(--color-primary);
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
 }
@@ -166,7 +207,7 @@ body {
   animation-iteration-count: infinite;
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-color: #bb5f27;
+  background-color: var(--color-primary);
 }
 
 @-moz-keyframes shimmer {

@@ -4,8 +4,7 @@ import { ReactTyped } from "react-typed"
 import Form from 'react-bootstrap/Form';
 import * as Icon from 'react-bootstrap-icons';
 import emailjs from '@emailjs/browser';
-import { useRef } from "react";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Spinner from 'react-bootstrap/Spinner';
@@ -131,13 +130,15 @@ function Contact() {
                     </motion.div>
                 </Col>
             </Row>
-            <div>
-                <motion.img 
+                <motion.div
                 initial={{clipPath: 'circle(0% at 50% 100%)'}}
                 animate={{clipPath: 'circle(150% at 50% 100%)'}}
                 transition={{duration: 1.8}}
-                className="img-back" src="./tree.jpg" alt="" />
-            </div>
+                className="img-back"
+                >
+                <motion.img className="img-back" src="./tree.jpg" alt="" />
+                <div className="filter-night"></div>
+            </motion.div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                 </Modal.Header>

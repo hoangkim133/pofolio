@@ -36,7 +36,7 @@ function Header() {
 
     return (
         <>
-        <Row className="main-font navbar-fix">
+        <Row className="main-font">
             <Col>
                 <motion.div
                         initial={{x: '-100vw'}}
@@ -57,7 +57,7 @@ function Header() {
                 </motion.div>
             </Col>
         </Row>
-        <Row className="main-font navbar-fix">
+        <Row className="main-font">
             <motion.div 
              initial={{x: '-100vw'}}
              animate={{x: 0}}
