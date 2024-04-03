@@ -49,13 +49,12 @@ function FeatureLogo() {
     useEffect(() => {
         var mode = localStorage.getItem("mode");
         console.log(mode);
-                // if (mode){
-        //     document.body.classList.remove('dark');
-        // } else {
-        //     document.body.classList.add('dark');
-        // }
+        if (mode){
+            document.body.classList.remove('dark');
+        } else {
+            document.body.classList.add('dark');
+        }
     }, []);
-    console.log("-----", localStorage.getItem("mode"));
 
     useEffect(() => {
         if (datenight) {
