@@ -50,10 +50,10 @@ function FeatureLogo() {
         var mode = localStorage.getItem("mode");
         if (mode){
             console.log(mode);
-            document.body.classList.remove('dark');
+            document.body.classList.add('dark');
         } else {
             console.log(mode);
-            document.body.classList.add('dark');
+            document.body.classList.remove('dark');
         }
     }, []);
 
