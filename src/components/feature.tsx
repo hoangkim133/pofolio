@@ -1,7 +1,7 @@
 import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const variants_x = {
     open: { scale: 1},
