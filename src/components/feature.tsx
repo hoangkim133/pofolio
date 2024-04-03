@@ -1,7 +1,7 @@
 import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const variants_x = {
     open: { scale: 1},
@@ -31,7 +31,7 @@ const Path = (props: any) => (
 function FeatureLogo() {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const [volume, toggleVolume] = useCycle(false, true); 
-    const [datenight, toggleDateNight] = useCycle(true, false); 
+    const [isDate, toggleIsDate] = useState(true); 
 
     const muteVolume = () => {
         toggleVolume();
@@ -48,23 +48,33 @@ function FeatureLogo() {
 
     useEffect(() => {
         var mode = localStorage.getItem("mode");
-        if (mode){
+        if (mode == null){
             console.log(mode);
-            document.body.classList.add('dark');
-        } else {
-            console.log(mode);
+            toggleIsDate(true);
             document.body.classList.remove('dark');
+        } else {
+            if (mode == "true"){
+                console.log(mode);
+                toggleIsDate(true);
+                document.body.classList.remove('dark');
+            } else {
+                console.log(mode);
+                toggleIsDate(false);
+                document.body.classList.add('dark');
+            }
         }
     }, []);
 
-    useEffect(() => {
-        if (datenight) {
+    const changeDateNightMode = () => {
+        toggleIsDate(!isDate);
+        
+        if (!isDate) {
             document.body.classList.remove('dark');
         } else {
             document.body.classList.add('dark');
         }
-        localStorage.setItem("mode", "" + datenight);
-    }, [datenight]);
+        localStorage.setItem("mode", "" + !isDate);
+    }
 
     const activeNav = (event: React.MouseEvent<HTMLElement>) => {
         let navChild = document.getElementsByClassName('navbar-child');
@@ -102,10 +112,10 @@ function FeatureLogo() {
                 <motion.div
                 variants={variants_icon}
                 animate={isOpen ? "open" : "closed"}
-                onClick={() => toggleDateNight()}
+                onClick={changeDateNightMode}
                 >
-                    <Icon.SunFill size={22} color="black" className={!datenight ? "hidden" : ""}/>
-                    <Icon.MoonFill size={22} color="black" className={datenight ? "hidden" : ""}/>
+                    <Icon.SunFill size={22} color="black" className={isDate ? "" : "hidden"}/>
+                    <Icon.MoonFill size={22} color="black" className={isDate ? "hidden" : ""}/>
                 </motion.div>
                 <motion.div 
                 animate={isOpen ? "open" : "closed"}

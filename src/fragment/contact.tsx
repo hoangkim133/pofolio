@@ -130,13 +130,14 @@ function Contact() {
                     </motion.div>
                 </Col>
             </Row>
-                <motion.div
+            <motion.div
                 initial={{clipPath: 'circle(0% at 50% 100%)'}}
                 animate={{clipPath: 'circle(150% at 50% 100%)'}}
                 transition={{duration: 1.8}}
                 className="img-back"
                 >
-                <motion.img className="img-back" src="./tree.jpg" alt="" />
+                <img className="img-back show-img-ct-light" src="./tree.jpg" alt="" />
+                <img className="img-back show-img-ct-dark" src="./treenone.png" alt="" />
                 <div className="filter-night"></div>
             </motion.div>
             <Modal show={show} onHide={handleClose}>

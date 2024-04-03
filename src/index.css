@@ -38,6 +38,8 @@ body {
   --color-navbut: #161717;
   --color-navbackground: rgb(242, 242, 242);
   --bg-filtercontact: transparent;
+  --img-show-light: block;
+  --img-show-dark: none;
 }
 
 body.dark {
@@ -53,7 +55,9 @@ body.dark {
   --color-homerdc: rgb(242, 197, 160);
   --color-navbut: #cfccca;
   --color-navbackground: rgb(112, 119, 161);
-  --bg-filtercontact: rgba(45, 50, 80, 0.887);
+  --bg-filtercontact: rgba(45, 50, 80, 0.411);
+  --img-show-light: none;
+  --img-show-dark: block;
 }
 
 @media (prefers-color-scheme: dark) {

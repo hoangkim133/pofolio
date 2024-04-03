@@ -326,6 +326,14 @@
   z-index: -99999;
 }
 
+.show-img-ct-light{
+  display: var(--img-show-light);
+}
+
+.show-img-ct-dark{
+  display: var(--img-show-dark);
+}
+
 .img-home-tree{
   position: absolute;
   right: 0;
