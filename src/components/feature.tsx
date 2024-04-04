@@ -1,10 +1,10 @@
 import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const variants_x = {
-    open: { scale: 1},
+    open: { scale: 1, backgroundColor: "rgba(0, 0, 0, 0)"},
     closed: { scale: 1, marginRight: '2.7rem'},
 }
 
@@ -15,7 +15,12 @@ const variants_icon = {
 
 const variants = {
     open: {width: '2.5rem'},
-    closed: {width: '7.5rem', backgroundColor: "var(--color-navbackground)", boxShadow: "rgb(136, 136, 136) 0px 0px 10px 0px"}
+    closed: {width: '7.5rem', boxShadow: "rgb(136, 136, 136) 0px 0px 10px 0px"}
+}
+
+const variants_bg = {
+    open: {opacity: 0},
+    closed: {opacity: 1}
 }
 
 const Path = (props: any) => (
@@ -31,7 +36,18 @@ const Path = (props: any) => (
 function FeatureLogo() {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const [volume, toggleVolume] = useCycle(false, true); 
-    const [isDate, toggleIsDate] = useState(true); 
+    const [isDate, toggleIsDate] = useState(() => {
+        var mode = localStorage.getItem("mode");
+        if (mode == null){
+            return true;
+        } else {
+            if (mode == "true"){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }); 
 
     const muteVolume = () => {
         toggleVolume();
@@ -46,28 +62,9 @@ function FeatureLogo() {
         }
     };
 
-    useEffect(() => {
-        var mode = localStorage.getItem("mode");
-        if (mode == null){
-            console.log(mode);
-            toggleIsDate(true);
-            document.body.classList.remove('dark');
-        } else {
-            if (mode == "true"){
-                console.log(mode);
-                toggleIsDate(true);
-                document.body.classList.remove('dark');
-            } else {
-                console.log(mode);
-                toggleIsDate(false);
-                document.body.classList.add('dark');
-            }
-        }
-    }, []);
-
     const changeDateNightMode = () => {
         toggleIsDate(!isDate);
-        
+
         if (!isDate) {
             document.body.classList.remove('dark');
         } else {
@@ -92,15 +89,22 @@ function FeatureLogo() {
 
     return (
         <>
-        <audio id="music" src="./public/canon.mp3" loop>
+        <audio id="music" src="./public/canon.mp3" autoPlay loop>
 
         </audio>
+
         <div className="navbar-logo">
             <motion.div
             variants={variants}
             animate={isOpen ? "closed" : "open"}
             className="navbar-fal"
-            >
+            >   
+                <motion.div
+                className="filter-nav"
+                variants={variants_bg}
+                animate={isOpen ? "closed" : "open"}
+                ></motion.div>
+                
                 <motion.div
                 variants={variants_icon}
                 animate={isOpen ? "open" : "closed"}
@@ -147,6 +151,8 @@ function FeatureLogo() {
                     </svg>
                 </motion.div>
             </motion.div>
+
+            
             
             <Link to='/' className="navbar-child" onClick={activeNav}>
                 <img 

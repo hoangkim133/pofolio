@@ -30,14 +30,45 @@
     <div id="root">
 
     </div>
-    <div class="cube show-img-ct-light"></div>
-    <div class="cube show-img-ct-light"></div>
-    <div class="cube show-img-ct-light"></div>
-    <div class="cube show-img-ct-light"></div>
-    <div class="cube show-img-ct-light"></div>
-    <div class="cube show-img-ct-light"></div>
+    <div class="show-img-ct-light">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="show-img-ct-dark">
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+    </div>
   </div>
   <script type="module" src="/src/main.tsx"></script>
+  <script>
+    var mode = localStorage.getItem("mode");
+    if (mode == null) {
+      document.body.classList.remove('dark');
+    } else {
+      if (mode == "true") {
+        document.body.classList.remove('dark');
+      } else {
+        document.body.classList.add('dark');
+      }
+    };
+  </script>
 </body>
 
 </html>
