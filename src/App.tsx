@@ -2,7 +2,7 @@ import './App.css'
 import React, {useState} from 'react';
 import Routers from './fragment/route';
 import Header from './fragment/header';
-// import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react"
 import { BrowserRouter } from 'react-router-dom'
 import { Row } from 'react-bootstrap';
 
@@ -31,7 +31,7 @@ function App() {
             </Row>
           </div>
         </BrowserRouter> 
-        {/* <Analytics/> */}
+        <Analytics/>
       </React.Fragment>
     )
   )
