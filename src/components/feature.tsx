@@ -2,6 +2,7 @@ import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
 import { useState } from "react";
+import sound from '/public/canon.mp3'
 
 const variants_x = {
     open: { scale: 1, backgroundColor: "rgba(0, 0, 0, 0)"},
@@ -89,7 +90,7 @@ function FeatureLogo() {
 
     return (
         <>
-        <audio id="music" src="./public/canon.mp3" autoPlay loop>
+        <audio id="music" src={sound} autoPlay loop>
 
         </audio>
 
