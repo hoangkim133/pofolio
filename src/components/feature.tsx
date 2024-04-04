@@ -6,7 +6,7 @@ import sound from '/public/canon.mp3'
 
 const variants_x = {
     open: { scale: 1, backgroundColor: "rgba(0, 0, 0, 0)"},
-    closed: { scale: 1, marginRight: '2.7rem'},
+    closed: { scale: 1},
 }
 
 const variants_icon = {
@@ -15,7 +15,7 @@ const variants_icon = {
 }
 
 const variants = {
-    open: {width: '2.5rem'},
+    open: {},
     closed: {width: '7.5rem', boxShadow: "rgb(136, 136, 136) 0px 0px 10px 0px"}
 }
 
@@ -130,8 +130,10 @@ function FeatureLogo() {
                 <svg 
                 width="23" height="23" viewBox="0 0 23 23">
                     <Path
-                        initial={{d: "M 2 2.5 L 20 2.5"}}
-                        animate={{d: "M 3 16.5 L 17 2.5"}}
+                        variants={{
+                        closed: { d: "M 2 2.5 L 20 2.5" },
+                        open: { d: "M 3 16.5 L 17 2.5" }
+                        }}
                     />
                     <Path
                         d="M 2 9.423 L 20 9.423"
@@ -142,8 +144,10 @@ function FeatureLogo() {
                         transition={{ duration: 0.1 }}
                     />
                     <Path
-                        initial={{d: "M 2 16.346 L 20 16.346"}}
-                        animate={{d: "M 3 2.5 L 17 16.346"}}
+                        variants={{
+                        closed: { d: "M 2 16.346 L 20 16.346" },
+                        open: { d: "M 3 2.5 L 17 16.346" }
+                        }}
                     />
                     </svg>
                 </motion.div>
