@@ -125,8 +125,7 @@ function Home() {
             id='tree-home'>
                     <img className="img-home-tree" src="./ink.png" alt="" />
             </motion.div>
-        </>
-        
+        </>   
     )
 }
 

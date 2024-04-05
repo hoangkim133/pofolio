@@ -2,7 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import FeatureLogo from "../components/feature";
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 
 
 function Header() {
@@ -90,4 +90,4 @@ function Header() {
   }
 
 
-export default Header
+export default memo(Header)
