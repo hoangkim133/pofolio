@@ -1,7 +1,7 @@
 import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import sound from '/public/canon.mp3'
 
 const variants_x = {
@@ -35,8 +35,20 @@ const Path = (props: any) => (
 );
 
 function FeatureLogo() {
+    const audioSound = useRef(null);
     const [isOpen, toggleOpen] = useCycle(false, true);
-    const [volume, toggleVolume] = useCycle(false, true); 
+    const [volume, toggleVolume] = useState(() => {
+        var volume = localStorage.getItem("volume");
+        if (volume == null){
+            return true;
+        } else {
+            if (volume == "true"){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }); 
     const [isDate, toggleIsDate] = useState(() => {
         var mode = localStorage.getItem("mode");
         if (mode == null){
@@ -51,16 +63,17 @@ function FeatureLogo() {
     }); 
 
     const muteVolume = () => {
-        toggleVolume();
+        toggleVolume(!volume);
         var music = document.getElementById('music') as HTMLAudioElement;
 
         if (music){
-            if (volume) {
+            if (!volume) {
                 music.play();
             } else {
                 music.pause();
             }
         }
+        localStorage.setItem("volume", "" + !volume);
     };
 
     const changeDateNightMode = () => {
@@ -88,11 +101,20 @@ function FeatureLogo() {
         }
     };
 
+    useEffect(() => {
+        if (audioSound.current) {
+            var elem: HTMLAudioElement = audioSound.current;
+            if (volume) {
+                elem.play();
+            } else {
+                elem.pause();
+            }
+        }
+    }, [])
+
     return (
         <>
-        <audio id="music" src={sound} autoPlay loop>
-
-        </audio>
+        <audio ref={audioSound} id="music" src={sound} loop></audio>
 
         <div className="navbar-logo">
             <motion.div
@@ -111,8 +133,8 @@ function FeatureLogo() {
                 animate={isOpen ? "open" : "closed"}
                 onClick={muteVolume}
                 >
-                    <Icon.VolumeUpFill size={22} color="black" className={volume ? "hidden" : ""}/>
-                    <Icon.VolumeMuteFill size={22} color="black" className={!volume ? "hidden" : ""}/>
+                    <Icon.VolumeUpFill size={22} color="black" className={volume ? "" : "hidden"}/>
+                    <Icon.VolumeMuteFill size={22} color="black" className={volume ? "hidden" : ""}/>
                 </motion.div>
                 <motion.div
                 variants={variants_icon}
