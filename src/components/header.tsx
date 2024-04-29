@@ -1,41 +1,18 @@
 import { Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
-import FeatureLogo from "../components/feature";
-import { useEffect, memo } from "react";
+import { NavLink } from 'react-router-dom';
+import FeatureLogo from "./feature";
+import { memo } from "react";
 
 
-function Header() {
-    useEffect(() => {
-        let navChild = document.getElementsByClassName('navbar-child');
-        let pathname = window.location.pathname;
-
-        for (var i = 0; i < navChild.length; i++) {
-            let child = navChild[i];
-            child.classList.remove('is-active');
-
-            if (child.getAttribute('href') == pathname) {
-                child.classList.add('is-active');
-            }
-        }
-    }, []);
-
-    const activeNav = (event: React.MouseEvent<HTMLElement>) => {
-        let navChild = document.getElementsByClassName('navbar-child');
-        let pathname = event.currentTarget.getAttribute('href');
-
-        for (var i = 0; i < navChild.length; i++) {
-            let child = navChild[i];
-            child.classList.remove('is-active');
-
-            if (child.getAttribute('href') == pathname) {
-                child.classList.add('is-active');
-            }
-        }
-    };
-
+function Header({refAudio} : any) {
     return (
-        <>
+        <motion.div
+        exit={{
+            opacity:0,
+            transition: {duration: 0.8}
+        }}
+        >
         <Row className="main-font">
             <Col>
                 <motion.div
@@ -53,7 +30,7 @@ function Header() {
                 animate={{x: 0}}
                 transition={{duration: 0.2, type: 'spring', stiffness: 70}}
                 style={{textAlign:'right'}}>
-                    <span><FeatureLogo/></span>
+                    <span><FeatureLogo refAudio={refAudio}/></span>
                 </motion.div>
             </Col>
         </Row>
@@ -64,28 +41,28 @@ function Header() {
              transition={{duration: 0.2, type: 'spring', stiffness: 70}}
             className="main-nav" style={{fontSize: '13px'}}>
                 <motion.span> 
-                    <Link to="/" className="navbar-child" onClick={activeNav}>
+                    <NavLink to="/" className={({ isActive, isPending }) =>isPending ? "navbar-child" : isActive ? "navbar-child is-active" : "navbar-child"}>
                         Home
-                    </Link> 
+                    </NavLink> 
                 </motion.span> |&nbsp;
                 <motion.span>
-                    <Link to="/about" className="navbar-child"  onClick={activeNav}>
+                    <NavLink to="/about" className={({ isActive, isPending }) =>isPending ? "navbar-child" : isActive ? "navbar-child is-active" : "navbar-child"}>
                         About
-                    </Link>
+                    </NavLink>
                 </motion.span> |&nbsp;
                 <motion.span>
-                    <Link to='/projects' className="navbar-child" onClick={activeNav}>
+                    <NavLink to='/projects' className={({ isActive, isPending }) =>isPending ? "navbar-child" : isActive ? "navbar-child is-active" : "navbar-child"}>
                         Projects
-                    </Link>
+                    </NavLink>
                 </motion.span> |&nbsp;
                 <motion.span>
-                    <Link to='/contact' className="navbar-child" onClick={activeNav}>
+                    <NavLink to='/contact' className={({ isActive, isPending }) =>isPending ? "navbar-child" : isActive ? "navbar-child is-active" : "navbar-child"}>
                         Contact
-                    </Link>
+                    </NavLink>
                 </motion.span>
             </motion.div>
             </Row>
-        </>
+        </motion.div>
     );
   }
 

@@ -26,21 +26,6 @@ const titleVariants = {
 }
 
 function Info() {
-
-    const redirectToProjects = (event: React.MouseEvent<HTMLElement>) => {
-        let navChild = document.getElementsByClassName('navbar-child');
-        let pathname = event.currentTarget.getAttribute('href');
-
-        for (var i = 0; i < navChild.length; i++) {
-            let child = navChild[i];
-            child.classList.remove('is-active');
-
-            if (child.getAttribute('href') == pathname) {
-                child.classList.add('is-active');
-            }
-        }
-    }
-
     return (
         <>
             <div className="box-fix box-conner full-height d-flex flex-column main-font scroll-off">
@@ -169,7 +154,7 @@ function Info() {
                             animate={{scaleX:1,transition: {delay:1.5, duration: 0.4}}}
                             >
                                 <i>
-                                    <Link to="/projects" className="link-atp" onClick={redirectToProjects}>
+                                    <Link to="/projects" className="link-atp">
                                         <span>&#8640;</span>
                                         <span> See my experience </span>                      
                                     </Link>

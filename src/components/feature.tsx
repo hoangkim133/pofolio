@@ -1,8 +1,7 @@
 import { motion, useCycle } from "framer-motion"
 import { Link } from "react-router-dom";
 import * as Icon from "react-bootstrap-icons"
-import { useState, useEffect, useRef } from "react";
-import sound from '/public/canon.mp3'
+import { useState, useEffect } from "react";
 
 const variants_x = {
     open: { scale: 1, backgroundColor: "rgba(0, 0, 0, 0)"},
@@ -34,8 +33,25 @@ const Path = (props: any) => (
     />
 );
 
-function FeatureLogo() {
-    const audioSound = useRef(null);
+const mode_order = ["system", "light", "dark"]
+
+function FeatureLogo({refAudio}: any) {
+    const [mode, toggleMode] = useState(() => {
+        var modeOrigin = localStorage.getItem("mode");
+        var modeSave =  "system";
+        if (modeOrigin != null) {
+            if (modeOrigin == 'system') {
+                modeSave =  "system";
+            } else if (modeOrigin == 'light') {
+                modeSave = "light";
+            } else if (modeOrigin == 'dark') {
+                modeSave = "dark";
+            }
+        }
+
+        return modeSave;
+    });
+    
     const [isOpen, toggleOpen] = useCycle(false, true);
     const [volume, toggleVolume] = useState(() => {
         var volume = localStorage.getItem("volume");
@@ -43,18 +59,6 @@ function FeatureLogo() {
             return true;
         } else {
             if (volume == "true"){
-                return true;
-            } else {
-                return false;
-            }
-        }
-    }); 
-    const [isDate, toggleIsDate] = useState(() => {
-        var mode = localStorage.getItem("mode");
-        if (mode == null){
-            return true;
-        } else {
-            if (mode == "true"){
                 return true;
             } else {
                 return false;
@@ -76,17 +80,6 @@ function FeatureLogo() {
         localStorage.setItem("volume", "" + !volume);
     };
 
-    const changeDateNightMode = () => {
-        toggleIsDate(!isDate);
-
-        if (!isDate) {
-            document.body.classList.remove('dark');
-        } else {
-            document.body.classList.add('dark');
-        }
-        localStorage.setItem("mode", "" + !isDate);
-    }
-
     const activeNav = (event: React.MouseEvent<HTMLElement>) => {
         let navChild = document.getElementsByClassName('navbar-child');
         let pathname = event.currentTarget.getAttribute('href');
@@ -101,9 +94,33 @@ function FeatureLogo() {
         }
     };
 
+    const changeMode = () => {
+        var index = mode_order.indexOf(mode);
+        var nextMode;
+        if (index == mode_order.length - 1) {
+            nextMode = mode_order[0];
+        } else {
+            nextMode = mode_order[index + 1];
+        }
+
+        toggleMode(nextMode);
+        localStorage.setItem("mode", nextMode);
+
+        if (nextMode == 'system') {
+            document.body.classList.add('adaptive');
+            document.body.classList.remove('dark');
+        } else if (nextMode == 'light') {
+            document.body.classList.remove('adaptive');
+            document.body.classList.remove('dark');
+        } else if (nextMode == 'dark') {
+            document.body.classList.remove('adaptive');
+            document.body.classList.add('dark');
+        }
+    };
+
     useEffect(() => {
-        if (audioSound.current) {
-            var elem: HTMLAudioElement = audioSound.current;
+        if (refAudio.current) {
+            var elem: HTMLAudioElement = refAudio.current;
             if (volume) {
                 elem.play();
             } else {
@@ -114,7 +131,6 @@ function FeatureLogo() {
 
     return (
         <>
-        <audio ref={audioSound} id="music" src={sound} loop></audio>
 
         <div className="navbar-logo">
             <motion.div
@@ -139,10 +155,13 @@ function FeatureLogo() {
                 <motion.div
                 variants={variants_icon}
                 animate={isOpen ? "open" : "closed"}
-                onClick={changeDateNightMode}
+                onClick={changeMode}
                 >
-                    <Icon.SunFill size={22} color="black" className={isDate ? "" : "hidden"}/>
-                    <Icon.MoonFill size={22} color="black" className={isDate ? "hidden" : ""}/>
+                    <span className={mode == "system" ? "" : "hidden"}>
+                        <img src="/daynight.png" alt="" className="icon-system" />
+                    </span>
+                    <Icon.SunFill size={22} color="black" className={mode == "light" ? "" : "hidden"}/>
+                    <Icon.MoonFill size={22} color="black" className={mode == "dark" ? "" : "hidden"}/>
                 </motion.div>
                 <motion.div 
                 animate={isOpen ? "open" : "closed"}
@@ -174,12 +193,8 @@ function FeatureLogo() {
                     </svg>
                 </motion.div>
             </motion.div>
-
-            
-            
             <Link to='/' className="navbar-child" onClick={activeNav}>
-                <img 
-                src="./logo.png" alt="" style={{height:'2.5rem', marginLeft: '0.5rem'}} />
+                <img src="./logo.png" alt="" style={{height:'2.5rem', marginLeft: '0.5rem'}} />
             </Link>
         </div>
         </>

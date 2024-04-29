@@ -30,7 +30,7 @@
     <div id="root">
 
     </div>
-    <div class="show-img-ct-light">
+    <div class="show-img-ct-light fixed-cube">
       <div class="cube"></div>
       <div class="cube"></div>
       <div class="cube"></div>
@@ -60,11 +60,17 @@
   <script>
     var mode = localStorage.getItem("mode");
     if (mode == null) {
+      document.body.classList.add('adaptive');
       document.body.classList.remove('dark');
     } else {
-      if (mode == "true") {
+      if (mode == 'system') {
+        document.body.classList.add('adaptive');
         document.body.classList.remove('dark');
-      } else {
+      } else if (mode == 'light') {
+        document.body.classList.remove('adaptive');
+        document.body.classList.remove('dark');
+      } else if (mode == 'dark') {
+        document.body.classList.remove('adaptive');
         document.body.classList.add('dark');
       }
     };

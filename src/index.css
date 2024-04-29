@@ -21,19 +21,15 @@ a:hover {
   color: #535bf2;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  padding: 2rem;
-  background-color: rgb(77, 77, 77);
-  height: 100%;
-  overflow: hidden;
+  background-color: #f8eee0;
+  --color-mode: black;
   --color-background: transparent;
   --color-navbarchild: #161717 ;
   --color-specialhello: #514f4e;
   --color-primary:#bb5f27;
+  --color-text-work:#33421c;
+  --color-text-shadow: -5px 5px 7px #eeededdb;
   --color-homerdc: #93694f;
   --color-navbut: #161717;
   --color-navbackground: rgb(242, 242, 242);
@@ -44,15 +40,15 @@ body {
 }
 
 body.dark {
-  padding: 2rem;
   background-color: rgb(45, 50, 80);
-  height: 100%;
-  overflow: hidden;
   color: rgb(250, 240, 230);
+  --color-mode: rgb(250, 240, 230);
   --color-background: rgb(53, 47, 68);
   --color-navbarchild: rgb(250, 240, 230);
   --color-specialhello: rgb(250, 240, 230);
   --color-primary:#bb5f27;
+  --color-text-work:whitesmoke;
+  --color-text-shadow: 5px 5px 10px #313131b5;
   --color-homerdc: rgb(242, 197, 160);
   --color-navbut: #cfccca;
   --color-navbackground: rgb(112, 119, 161);
@@ -60,36 +56,50 @@ body.dark {
   --img-show-light: none;
   --img-show-dark: block;
   --color-preloaderbg: rgb(55, 51, 67);
+  --dark-logo: invert(1);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  body {
-    padding: 2rem;
+@media (prefers-color-scheme: light) {
+  body.adaptive {
+    background-color: #f8eee0;
+    --color-mode: black;
+    --color-background: transparent;
+    --color-navbarchild: #161717 ;
+    --color-specialhello: #514f4e;
+    --color-primary:#bb5f27;
+    --color-text-work:#33421c;
+    --color-text-shadow: -5px 5px 7px #eeededdb;
+    --color-homerdc: #93694f;
+    --color-navbut: #161717;
+    --color-navbackground: rgb(242, 242, 242);
+    --bg-filtercontact: transparent;
+    --img-show-light: block;
+    --img-show-dark: none;
+    --color-preloaderbg: #f7f7f7;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body.adaptive {
     background-color: rgb(45, 50, 80);
-    height: 100%;
-    overflow: hidden;
     color: rgb(250, 240, 230);
+    --color-mode: rgb(250, 240, 230);
     --color-background: rgb(53, 47, 68);
     --color-navbarchild: rgb(250, 240, 230);
     --color-specialhello: rgb(250, 240, 230);
     --color-primary:#bb5f27;
+    --color-text-work:whitesmoke;
+    --color-text-shadow: 5px 5px 10px #313131b5;
     --color-homerdc: rgb(242, 197, 160);
     --color-navbut: #cfccca;
     --color-navbackground: rgb(112, 119, 161);
     --bg-filtercontact: rgba(45, 50, 80, 0.411);
     --img-show-light: none;
     --img-show-dark: block;
-    --color-preloaderbg: rgb(49, 43, 67);
+    --color-preloaderbg: rgb(55, 51, 67);
+    --dark-logo: invert(1);
   }
-} */
-
-body {
-  padding: 2rem;
-  background-color: #f8eee0;
-  height: 100%;
-  overflow: hidden;
 }
-
 
 .preloader-front{
   opacity: 1;
@@ -194,6 +204,14 @@ body {
   }
 }
 
+.fixed-cube{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -999;
+}
 
 .shimmer {
   margin-top: 10rem;

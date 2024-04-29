@@ -1,14 +1,12 @@
 import './App.css'
 import React, {useState} from 'react';
 import Routers from './fragment/route';
-import Header from './fragment/header';
 import { Analytics } from "@vercel/analytics/react"
 import { BrowserRouter } from 'react-router-dom'
-import { Row } from 'react-bootstrap';
-
 
 function App() {
   const [loading, setLoading] = useState(true);
+
   const preloader = document.getElementById('id_preloader');
 
   if (preloader){
@@ -24,12 +22,7 @@ function App() {
     !loading && (
       <React.Fragment>
         <BrowserRouter>
-          <div className='box box-conner full-height d-flex flex-column scroll-off'>
-            <Header/>
-            <Row className="flex-grow-1">
-                <Routers/>  
-            </Row>
-          </div>
+          <Routers/>  
         </BrowserRouter> 
         <Analytics/>
       </React.Fragment>

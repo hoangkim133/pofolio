@@ -83,7 +83,7 @@ function Contact() {
                     <div className="text_cont">
                         <p>
                             <ReactTyped
-                                    strings={["If you're intrigued, don't hesitate to get in touch. Additionally, you can explore more about me by viewing <a href='https://drive.google.com/file/d/1831RxdNq-mOqw4nwqBLAKUaniCUrBLAZ/view' target='_blank'> my CV (Click here) </a>"]}
+                                    strings={["If you're intrigued, don't hesitate to get in touch. Additionally, you can explore more about me by viewing <a href='./resume.pdf' target='_blank'> my CV (Click here) </a>"]}
                                     startDelay={1000}
                                     typeSpeed={30}
                                     showCursor={false}
@@ -116,7 +116,7 @@ function Contact() {
                                 <a href="https://www.linkedin.com/in/hoangkim133/" target="_blank"><Icon.Linkedin size={30} color="#faf5e9"/></a>
                                 <a href="https://github.com/hoangkim133" target="_blank"><Icon.Github size={30} color="#faf5e9"/></a>
                                 <a href="mailto:phamkimhoang133@gmail.com" target="_blank"><Icon.Envelope size={30}color="#faf5e9"/></a>
-                                <a href="https://drive.google.com/file/d/1831RxdNq-mOqw4nwqBLAKUaniCUrBLAZ/view" target="_blank"><Icon.PersonCircle size={30} color="#faf5e9"/></a>
+                                <a href="./resume.pdf" target="_blank"><Icon.PersonCircle size={30} color="#faf5e9"/></a>
                             </Col>
                             <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={4}>
                                 <motion.div 

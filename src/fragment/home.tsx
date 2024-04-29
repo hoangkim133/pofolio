@@ -18,20 +18,6 @@ const textVariants = {
 }
 
 function Home() {
-    const changPage = (event: React.MouseEvent<HTMLElement>) => {
-        let navChild = document.getElementsByClassName('navbar-child');
-        let pathname = event.currentTarget.getAttribute('href');
-
-        for (var i = 0; i < navChild.length; i++) {
-            let child = navChild[i];
-            child.classList.remove('is-active');
-
-            if (child.getAttribute('href') == pathname) {
-                child.classList.add('is-active');
-            }
-        }
-    };
-
     const changeClass = () => {
         var wel = document.getElementById("welcome");
         var side = document.getElementById("welcome_side");
@@ -61,7 +47,7 @@ function Home() {
             animate="visible"
             exit="exit"
             id='welcome' className='stage_inner__centerbox'>
-                <div className='main-font'>
+                <div className='main-font child-home'>
                     <p className='special-hello'>HELLO THERE</p> 
                     My name is Hoang and I'm a software developer 
                     <br />
@@ -69,14 +55,14 @@ function Home() {
                     <br/> 
                     Feel free to reach out — I'm all ears!
                 </div>   
-                <div className='main-font'>
+                <div className='main-font child-home'>
                     <Button onClick={changeClass} className='offset' style={{fontSize:"15px"}}>
                         Explore my site
                     </Button>{' '}
                 </div>
             </motion.div>                   
             <div id='welcome_side' className='stage_inner__sidebox'>
-                    <Link to="/about" className='text-home-decor' onClick={changPage}>
+                    <Link to="/about" className='text-home-decor'>
                         <motion.p
                         whileHover={{textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
                         className='home-rdc'
@@ -89,7 +75,7 @@ function Home() {
                         </motion.p>
                     </Link>
                 
-                    <Link to="/projects" className='text-home-decor' onClick={changPage}>
+                    <Link to="/projects" className='text-home-decor'>
                         <motion.p
                         whileHover={{textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
                         className='home-rdc'
@@ -101,7 +87,7 @@ function Home() {
                         
                     </Link>
             
-                    <Link to="/contact" className='text-home-decor' onClick={changPage}>
+                    <Link to="/contact" className='text-home-decor'>
                         <motion.p
                         whileHover={{textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
                         className='home-rdc'
