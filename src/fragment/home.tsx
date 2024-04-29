@@ -47,7 +47,7 @@ function Home() {
             animate="visible"
             exit="exit"
             id='welcome' className='stage_inner__centerbox'>
-                <div className='main-font child-home'>
+                <div className='main-font'>
                     <p className='special-hello'>HELLO THERE</p> 
                     My name is Hoang and I'm a software developer 
                     <br />
@@ -55,7 +55,7 @@ function Home() {
                     <br/> 
                     Feel free to reach out — I'm all ears!
                 </div>   
-                <div className='main-font child-home'>
+                <div className='main-font'>
                     <Button onClick={changeClass} className='offset' style={{fontSize:"15px"}}>
                         Explore my site
                     </Button>{' '}

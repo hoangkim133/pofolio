@@ -193,7 +193,7 @@ function FeatureLogo({refAudio}: any) {
                     </svg>
                 </motion.div>
             </motion.div>
-            <Link to='/' className="navbar-child" onClick={activeNav}>
+            <Link to='/' className="navbar-child mobile-hidden" onClick={activeNav}>
                 <img src="./logo.png" alt="" style={{height:'2.5rem', marginLeft: '0.5rem'}} />
             </Link>
         </div>
