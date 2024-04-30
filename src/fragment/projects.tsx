@@ -84,7 +84,7 @@ function Project() {
                             </p>
                         </div>
                         <motion.div variants={lineMotion} data-id={item.value} className="line-pro">
-                            <motion.div variants={textChild} data-text-id={item.value + "_text"} className="line-text">Click to see more</motion.div>
+                            <motion.div variants={textChild} data-text-id={item.value + "_text"} className="line-text tablets-hidden">Click to see more</motion.div>
                         </motion.div>
                     </motion.div>
                     
