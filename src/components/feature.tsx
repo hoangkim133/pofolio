@@ -149,8 +149,8 @@ function FeatureLogo({refAudio}: any) {
                 animate={isOpen ? "open" : "closed"}
                 onClick={muteVolume}
                 >
-                    <Icon.VolumeUpFill size={22} color="black" className={volume ? "" : "hidden"}/>
-                    <Icon.VolumeMuteFill size={22} color="black" className={volume ? "hidden" : ""}/>
+                    <Icon.VolumeUpFill size={22} className={volume ? "" : "hidden"}/>
+                    <Icon.VolumeMuteFill size={22} className={volume ? "hidden" : ""}/>
                 </motion.div>
                 <motion.div
                 variants={variants_icon}
@@ -158,10 +158,10 @@ function FeatureLogo({refAudio}: any) {
                 onClick={changeMode}
                 >
                     <span className={mode == "system" ? "" : "hidden"}>
-                        <img src="/daynight.png" alt="" className="icon-system" />
+                        <img src="/daynight.png" alt="" className="icon-system dark-logo" />
                     </span>
-                    <Icon.SunFill size={22} color="black" className={mode == "light" ? "" : "hidden"}/>
-                    <Icon.MoonFill size={22} color="black" className={mode == "dark" ? "" : "hidden"}/>
+                    <Icon.SunFill size={22} className={mode == "light" ? "" : "hidden"}/>
+                    <Icon.MoonFill size={22} className={mode == "dark" ? "" : "hidden"}/>
                 </motion.div>
                 <motion.div 
                 animate={isOpen ? "open" : "closed"}
