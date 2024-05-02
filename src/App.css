@@ -367,6 +367,10 @@
   text-transform: capitalize;
 }
 
+.modal-content{
+  background-color: var(--color-navbackground);
+}
+
 .text-spe {
   font-weight: 800;
   line-height: 1em;
@@ -751,10 +755,11 @@
 }
 
 .work-ct-detail {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 1.5rem;
   margin-right: 2.5rem;
   float: right;
+  color: var(--color-specialhello);
 }
 
 .color-by-mode {

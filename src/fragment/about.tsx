@@ -20,7 +20,7 @@ const titleVariants = {
         transition: { delay: 0.2, duration: 0.2}
     },
     exit: {
-        scaleX:0,
+        clipPath:'inset(0 100% 0 0)',
         transition: {duration: 0.5}
     }
 }
@@ -33,7 +33,7 @@ function Info() {
                     <Row style={{minHeight:'30vh'}}>
                         <Col sm={12} lg={4} md={4} xl={4} xxl={4}>
                             <motion.div
-                             exit={{scaleX:0, originX: 0,
+                             exit={{clipPath:'inset(0 100% 0 0)',originX: 0,
                                 transition: {duration: 0.4}}}
                             >
                             <motion.h6 className="secondary-font title"
@@ -97,7 +97,7 @@ function Info() {
                                 className="secondary-font title">Background</motion.h6>
 
                             <motion.div
-                            exit={{scaleX:0, originX: 0,
+                            exit={{clipPath:'inset(0 100% 0 0)',originX: 0,
                                 transition: {duration: 0.4}}}
                             >
                             <p className="text-info-detail">
@@ -130,7 +130,7 @@ function Info() {
                             exit="exit"
                             className="secondary-font title">Something elses</motion.h6>
                             <motion.div
-                            exit={{scaleX:0, originX: 0,
+                            exit={{clipPath:'inset(0 100% 0 0)',originX: 0,
                                 transition: {duration: 0.4}}}
                             >
                                 <p className="text-info-detail"> 

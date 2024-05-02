@@ -57,7 +57,7 @@ function Routers() {
 
     return (
             <div 
-            ref={main_section} id='main_section' className={classBox}>
+            ref={main_section} id='main_section' className={classBox} style={{overflowX: "hidden"}}>
                 <audio ref={audioSound} id="music" src={sound} loop></audio>
 
                 <AnimatePresence mode="wait">

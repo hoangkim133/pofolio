@@ -64,10 +64,11 @@ function Home() {
             <div id='welcome_side' className='stage_inner__sidebox'>
                     <Link to="/about" className='text-home-decor'>
                         <motion.p
-                        whileHover={{textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
+                        whileHover={{scale: 1.05, originX: 0, textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
                         className='home-rdc'
                         exit={{
-                            scale:0,
+                            clipPath:'inset(0 0 0 100%)',
+                            opacity: 0,
                             transition: {duration: 0.5}
                         }}
                         >
@@ -77,10 +78,11 @@ function Home() {
                 
                     <Link to="/projects" className='text-home-decor'>
                         <motion.p
-                        whileHover={{textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
+                        whileHover={{scale: 1.05, originX: 0,textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
                         className='home-rdc'
                         exit={{
-                            scale:0,
+                            clipPath:'inset(0 0 0 100%)',
+                            opacity: 0,
                             transition: {duration: 0.5}
                         }}
                         >PROJECTS</motion.p>
@@ -89,10 +91,11 @@ function Home() {
             
                     <Link to="/contact" className='text-home-decor'>
                         <motion.p
-                        whileHover={{textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
+                        whileHover={{scale: 1.05, originX: 0, textShadow: 'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px'}}
                         className='home-rdc'
                         exit={{
-                            scale:0,
+                            clipPath:'inset(0 0 0 100%)',
+                            opacity: 0,
                             transition: {duration: 0.5}
                         }}
                         >
