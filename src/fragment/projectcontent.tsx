@@ -3,8 +3,10 @@ import VickProject from "../projectspart/provick";
 import HdcapProject from "../projectspart/prohdcap";
 import AladinProject from "../projectspart/proaladin";
 import MysiteProject from "../projectspart/promysite";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from 'react';
+import { ChevronDoubleDown } from 'react-bootstrap-icons';
+
 
 
 interface ProjectInfomation {
@@ -31,11 +33,31 @@ function ProjectContent() {
         setProject(project_array_urlkey[locationReact.pathname]);
     }, [locationReact])
 
+    const [arrowDown, setArrowDown] = useState(1);
+    const { scrollYProgress } = useScroll();
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        if (latest == 0){
+            setArrowDown(1);
+        } else if (latest > 0 && latest < 1) {
+            setArrowDown(0);
+        }
+    });
+
     return (
     <>
         <motion.div ref={scroll_ref}>  
             <AnimatePresence mode="wait">
-                {project.element}
+                <div>
+                    {project.element}
+                    <motion.div 
+                    initial={{opacity: 0, y: -15}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{delay: 4, duration: 0.8, type: "spring", repeat: Infinity, repeatType: "reverse",}}
+                    style={{position: "fixed", width: "100%", bottom: "0", left: "calc(50% - 11px)", marginBottom: '1.5rem'}}>
+                        <ChevronDoubleDown style={{opacity: arrowDown}} size={22}/>
+                    </motion.div>
+                </div> 
             </AnimatePresence>
         </motion.div>   
     </>

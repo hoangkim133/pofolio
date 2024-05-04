@@ -19,7 +19,7 @@ function Routers() {
     const lst_href_project = ["/projects/vick", "/projects/hdcap", "/projects/aladin", "/projects/mysite"]
     const location = useLocation();
     const main_section = useRef<HTMLDivElement>(null);
-    const audioSound = useRef(null);
+    const audioSound = useRef<HTMLAudioElement>(null);
 
 
     const [classBox, setClassBox] = useState(() => {
@@ -53,7 +53,52 @@ function Routers() {
           main_section.current.style.position = 'fixed';
         }
       }
+
+
+      // change title
+      switch (location.pathname) {
+        case '/about':
+          document.title = 'Kim Hoang - About'
+          break;
+        case '/projects':
+          document.title = 'Kim Hoang - Projects'
+          break;
+        case '/contact':
+          document.title = 'Kim Hoang - Contact'
+          break;
+        case '/projects/vick':
+          document.title = 'Kim Hoang - Projects - ViCK'
+          break;
+        case '/projects/hdcap':
+          document.title = 'Kim Hoang - Projects - HDCap'
+          break;
+        case '/projects/aladin':
+          document.title = 'Kim Hoang - Projects - Aladin'
+          break;
+        case '/projects/mysite':
+          document.title = 'Kim Hoang - Projects - My Site'
+          break;
+        default:
+          document.title = 'Kim Hoang'
+          break;
+      }
     }, [location])
+
+    useEffect(() => {
+      var volume = localStorage.getItem("volume");
+      var music_container = audioSound.current;
+      if (music_container) {
+        if (volume == null){
+          music_container.play();
+        } else {
+            if (volume == "true"){
+              music_container.play();
+            } else {
+              music_container.pause();
+            }
+        }
+      }
+    }, [])
 
     return (
             <div 
