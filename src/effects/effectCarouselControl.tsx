@@ -28,7 +28,7 @@ function EffectCarouselControl({name, index, total}: Props) {
     }
 
     return (
-        <div style={{display: "flex", alignItems: "center"}}>
+        <div style={{display: "flex", alignItems: "center"}} className="margin-t-1-mobile mobile-center">
             <div className="center-dis-al pointed" onClick={clickPre}>
                 <Icon.ArrowLeft/>
             </div>

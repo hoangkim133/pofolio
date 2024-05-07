@@ -81,7 +81,7 @@ function HdcapProject() {
                             </Row>
                         </Col>
                     </Row>
-                    <Row style={{marginTop: "6rem"}}>
+                    <Row className="section-bt-pro-6">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <EffectShowMore height={"40rem"}>
@@ -98,7 +98,7 @@ function HdcapProject() {
                             </Row>
                         </Col>
                     </Row>
-                    <Row style={{marginTop: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <img loading="lazy" src="/hdsearch.png" className="full-img" alt="" />
@@ -113,7 +113,7 @@ function HdcapProject() {
                             </Row>
                         </Col>
                     </Row>
-                    <Row style={{marginTop: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <Carousel interval={null} touch={true} controls={true} onSelect={(eventKey: number) => {setIndexCarou1(eventKey)}} id="caroul_1">
@@ -137,7 +137,7 @@ function HdcapProject() {
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginTop: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <Carousel interval={null} touch={true} controls={true} onSelect={(eventKey: number) => {setIndexCarou2(eventKey)}} id="caroul_2">
@@ -174,7 +174,7 @@ function HdcapProject() {
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginTop: "4rem"}}>
+                    <Row className="section-bt-pro-4">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <p>

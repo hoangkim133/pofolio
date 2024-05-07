@@ -111,14 +111,14 @@ function Contact() {
                                 <Form.Control onChange={changeBorderEmpty} className="form-child" name="message" as="textarea" rows={3} />
                             </Form.Group>
                         </Form>
-                        <Row style={{marginTop: '1.7rem'}}>
-                            <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={8} className="info-contact-icon">
+                        <Row style={{marginTop: '1.7rem', display: "f"}}>
+                            <Col sm={9} lg={9} md={9} xl={9} xxl={9} xs={9} className="info-contact-icon">
                                 <a href="https://www.linkedin.com/in/hoangkim133/" target="_blank"><Icon.Linkedin size={30} color="#faf5e9"/></a>
                                 <a href="https://github.com/hoangkim133" target="_blank"><Icon.Github size={30} color="#faf5e9"/></a>
                                 <a href="mailto:phamkimhoang133@gmail.com" target="_blank"><Icon.Envelope size={30}color="#faf5e9"/></a>
-                                <a href="./resume.pdf" target="_blank"><Icon.PersonCircle size={30} color="#faf5e9"/></a>
+                                <a href="./resume.pdf" target="_blank" className="mobile-show"><Icon.PersonCircle size={30} color="#faf5e9"/></a>
                             </Col>
-                            <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={4}>
+                            <Col sm={3} lg={3} md={3} xl={3} xxl={3} xs={3}>
                                 <motion.div 
                                 whileHover={{scale: 1.1}}
                                 className="button-send-mail" onClick={sendEmail}>

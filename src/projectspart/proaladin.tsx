@@ -42,7 +42,7 @@ function AladinProject() {
                     transition={{duration: 1.5, ease: "easeIn"}}
                     className="font-mobile"
                     >
-                    <Row style={{marginBottom: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <h3>Aladin.finance is a platform that connects investors and securities advisors.</h3>
@@ -60,7 +60,7 @@ function AladinProject() {
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginBottom: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <img className="full-img" src="/aladinpic.png" alt="" />
@@ -75,7 +75,7 @@ function AladinProject() {
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginBottom: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <Carousel interval={null} touch={true} controls={true} onSelect={(eventKey: number) => {setIndexCarou1(eventKey)}} id="caroul_2">
@@ -107,15 +107,11 @@ function AladinProject() {
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginBottom: "2rem"}}>
-                            <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={11}>
+                    <Row className="section-bt-pro-2">
+                            <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                                 <EffectFlyUp>
-                                    <p>Aladin is the company where I started as a backend intern and gradually transitioned into a full-stack developer role. Upon joining, many functionalities and interfaces were already in place.</p>
-                                </EffectFlyUp>
-                            </Col>
-                            <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={11}>
-                                <EffectFlyUp delay={0.2}>
-                                    <p> My primary responsibilities included developing new features, crawling data from various sources for the website, and working with HubSpot CRM to manage user interactions.</p>
+                                    <p>Aladin is the company where I started as a backend intern and gradually transitioned into a full-stack developer role.</p>
+                                    <p>My primary responsibilities included maintain and optimize existing functionalities, developing new features, crawling data from various sources for the website, and working with HubSpot CRM to manage user interactions.</p>
                                 </EffectFlyUp>
                             </Col>
                         </Row>

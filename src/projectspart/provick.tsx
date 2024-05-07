@@ -42,7 +42,7 @@ function VickProject() {
                     transition={{duration: 1.5, delay: 1, ease: "easeIn"}}
                     className="font-mobile"
                     >
-                        <Row style={{marginBottom: "6rem"}}>
+                        <Row className="section-bt-pro-6">
                             <Col xs={11} sm={8} md={4} lg={4} xl={4} xxl={4} >
                                 <EffectFlyUp>
                                     <h3>Vick is an enterprise operating in the field of securities finance.</h3>
@@ -68,14 +68,14 @@ function VickProject() {
                                 </Row>
                             </Col>
                         </Row>
-                        <Row style={{marginBottom: "6rem"}}>
+                        <Row className="section-bt-pro-6">
                             <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                                 <EffectFlyUp>
                                     <img className="full-img" src="/vicksite.png" alt="" />
                                 </EffectFlyUp>
                             </Col>
                         </Row>
-                        <Row style={{marginBottom: "6rem"}}>
+                        <Row className="section-bt-pro-6">
                             <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                                 <EffectFlyUp>
                                     <p>The ViCK platform offers a multitude of features including trading, chatting, posting, news, and payments, among others. Consequently, the platform has been designed following a <b>microservices architecture</b> to ensure scalability for future expansions. Each functional module is developed independently, enabling its reusability across multiple projects.</p>
@@ -93,7 +93,7 @@ function VickProject() {
                                 </EffectFlyUp>
                             </Col>
                         </Row>
-                        <Row style={{marginBottom: "6rem"}}>
+                        <Row className="section-bt-pro-6">
                             <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                                 <EffectFlyUp>
                                     <img className="full-img" src="/traningvick.png" style={{filter: "drop-shadow(0px 7px 10px grey)"}} alt="" />
@@ -106,7 +106,7 @@ function VickProject() {
                                 </EffectFlyUp>
                             </Col>
                         </Row>
-                        <Row style={{marginBottom: "2rem"}}>
+                        <Row className="section-bt-pro-2">
                             <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={11}>
                                 <EffectFlyUp>
                                     <p>My primary role in the company is as a <b>backend developer</b>, although I also occasionally work as a frontend developer. I am responsible for several modules, participate in architectural design, and develop APIs for business logic.</p>

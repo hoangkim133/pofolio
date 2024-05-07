@@ -40,7 +40,7 @@ function MysiteProject() {
                     transition={{duration: 1.5, delay: 1, ease: "easeIn"}}
                     className="font-mobile"
                     >
-                    <Row style={{marginBottom: "8rem"}}>
+                    <Row className="section-bt-pro-8">
                         <Col sm={4} lg={4} md={4} xl={4} xxl={4} xs={11}>
                             <EffectFlyUp>
                                 <div style={{display: 'flex'}}>
@@ -64,7 +64,7 @@ function MysiteProject() {
                             </Row>
                         </Col>
                     </Row>
-                    <Row style={{marginBottom: "6rem"}}>
+                    <Row className="section-bt-pro-6">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <img className="full-img" src="/site-logos.png" alt="Libraries" />
@@ -77,14 +77,14 @@ function MysiteProject() {
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginBottom: "6rem"}}>
+                    <Row className="section-bt-pro-6">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <p>Particularly with Framer Motion, it's an excellent library that enables the creation of stunning effects, limited only by the developer's imagination. Almost all the effects on this website are achieved using Framer (with a few still relying on pure CSS). The effects using Framer are designed as separate components, with the aim of reusability and seamless integration. By simply passing children and declaring Props, they can be effortlessly combined. This modular approach ensures flexibility and efficiency in enhancing user experience.</p>
                             </EffectFlyUp>
                         </Col>
                     </Row>
-                    <Row style={{marginBottom: "6rem"}}>
+                    <Row className="section-bt-pro-6">
                         <Col sm={8} lg={8} md={8} xl={8} xxl={8} xs={11}>
                             <EffectFlyUp>
                                 <img className="full-img border-spe" src="/lightdark.png" alt="light dark mode" />
