@@ -1,6 +1,5 @@
 import { Row, Col } from "react-bootstrap"
 import { motion } from "framer-motion"
-import { ReactTyped } from "react-typed"
 import Form from 'react-bootstrap/Form';
 import * as Icon from 'react-bootstrap-icons';
 import emailjs from '@emailjs/browser';
