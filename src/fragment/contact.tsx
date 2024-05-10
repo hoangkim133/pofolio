@@ -81,14 +81,13 @@ function Contact() {
             <Row className="main-font" style={{marginTop: '2.5rem'}}>
                 <Col className="mobile-hidden">
                     <div className="text_cont">
-                        <p>
-                            <ReactTyped
-                                    strings={["If you're intrigued, don't hesitate to get in touch. Additionally, you can explore more about me by viewing <a href='./resume.pdf' target='_blank'> my CV (Click here) </a>"]}
-                                    startDelay={1000}
-                                    typeSpeed={30}
-                                    showCursor={false}
-                            />
-                        </p> 
+                        <motion.p
+                        initial={{clipPath: 'inset(0 100% 0 0)'}}
+                        animate={{clipPath: 'inset(0 0 0 0)'}}
+                        transition={{duration: 0.6, delay: 0.4}}
+                        >
+                            If you're intrigued, don't hesitate to get in touch. Additionally, you can explore more about me by viewing <a style={{textDecoration: "underline"}} className="color-by-mode" href='./resume.pdf' target='_blank'><b><i>my CV (Click here)</i></b></a>
+                        </motion.p> 
                     </div>
                 </Col>
                 <Col>
