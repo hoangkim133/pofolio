@@ -168,7 +168,7 @@ function Info() {
                             className="main-color-text main-font"> 
                                 <i>
                                     <ReactTyped
-                                    strings={["“No pain no gain !!! - Strive to exceed yesterday's self”", "“Nothing haunts us like the things we don't say!”"]}
+                                    strings={["“You don't know if you don't try”", "“Nothing haunts us like the things we don't say!”"]}
                                     startDelay={1500}
                                     backDelay={2000}
                                     typeSpeed={50}
