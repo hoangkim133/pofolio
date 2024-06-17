@@ -60,6 +60,11 @@ function Header({refAudio} : any) {
                         Contact
                     </NavLink>
                 </motion.span>
+                <motion.span> |&nbsp;
+                    <a className="navbar-child" href="https://euro2024kh.vercel.app/" target="_blank">
+                        EURO-2024
+                    </a>
+                </motion.span>
             </motion.div>
             </Row>
         </motion.div>
